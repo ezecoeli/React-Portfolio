@@ -4,8 +4,6 @@ import { toggleTheme } from '../store/themeSlice';
 import { MdOutlineWbSunny } from "react-icons/md";
 import { IoMdMoon } from "react-icons/io";
 
-
-
 const Header = () => {
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.theme.darkMode);
