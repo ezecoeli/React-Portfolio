@@ -323,3 +323,15 @@ footer {
   align-items: center;
 }
 
+ /* banda de contadores */
+.counter-band {
+  background: linear-gradient(90deg, #434f98 0%, #747bff 100%);
+  color: white;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 12px;
+  margin: 2rem 1rem;
+}
