@@ -71,10 +71,12 @@ Puedes fácilmente agregar más idiomas creando nuevos archivos JSON y extendien
 
 Agrega este script a package.json:
 
+```json
 "scripts": {
   "predeploy": "npm run build",
   "deploy": "gh-pages -d dist"
 }
+```
 
 Luego ejecuta:
 npm run deploy
