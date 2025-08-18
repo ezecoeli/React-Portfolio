@@ -168,11 +168,11 @@ body {
   min-height: 100vh;
   background-color: var(--bg-light);
   color: var(--text-light);
-  padding-top: 120px; /* Para móvil */
+  padding-top: 120px; /* móvil */
 }
 @media (min-width: 768px) {
   body {
-    padding-top: 80px; /* Para desktop */
+    padding-top: 80px; /* desktop */
   }
 }
 
@@ -207,7 +207,7 @@ h1 {
 .h2-animated:hover::after {
   width: 100%;
 }
-/* Ajustes responsivos */
+/* Ajustes responsive */
 @media (max-width: 768px) {
   .h2-animated::after {
     height: 1px;

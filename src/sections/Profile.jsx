@@ -5,7 +5,7 @@ import { VscVscode } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import ReactMarkdown from 'react-markdown';
 
-import profilePhoto from '../assets/profilePhoto.jpg';
+import profilePhoto from '../assets/profilePhoto.png';
 
 // Componente para unificar el efecto de iconos
 const IconWithPulse = ({ Icon, title }) => (
@@ -46,10 +46,10 @@ export default function Profile() {
           </h2>
         </div>
 
-        {/* GRILLA para foto y texto */}
+        {/* grilla para foto y texto */}
         <div className="grid grid-cols-2 gap-6 md:gap-12 items-center mb-12">
           
-          {/* Columna 1: Foto con efectos */}
+          {/* Columna 1: foto con efectos */}
           <motion.div 
             className="flex justify-center md:justify-end"
             initial={{ scale: 0.8, opacity: 0 }}
@@ -61,14 +61,14 @@ export default function Profile() {
               <img 
                 src={profilePhoto} 
                 alt="Foto de perfil" 
-                className="dark:brightness-80 w-48 h-48 md:w-56 md:h-56 rounded-full shadow-2xl border-4 border-blue-500 object-cover hover:border-blue-400 transition-all duration-300" 
+                className="dark:brightness-80 w-48 h-48 md:w-56 md:h-56 shadow-2xl border-4 border-blue-500 object-cover hover:border-blue-400 transition-all duration-300" 
               />
               {/* Efecto de glow */}
               <div className="absolute inset-0 rounded-full bg-blue-500 opacity-20 blur-xl animate-pulse"></div>
             </div>
           </motion.div>
 
-          {/* Columna 2: Texto */}
+          {/* Columna 2: texto */}
           <motion.div 
             className="flex flex-col justify-center"
             initial={{ x: 50, opacity: 0 }}
