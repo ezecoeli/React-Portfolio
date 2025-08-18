@@ -9,10 +9,9 @@ El objetivo principal es seguir aprendiendo, experimentar con nuevas herramienta
 1. [Demo en vivo]
 2. [Características]
 3. [Stack tecnológico]
-4. [Estructura del proyecto]
-5. [Cómo ejecutar el proyecto localmente]
-6. [Multilenguaje (i18n)]
-7. [Deploy con GitHub Pages]
+4. [Cómo ejecutar el proyecto localmente]
+5. [Multilenguaje (i18n)]
+6. [Deploy con GitHub Pages]
 
 ---
 
@@ -44,34 +43,17 @@ Puedes verlo funcionando en:
 
 ---
 
-## Estructura del proyecto
-React-Portfolio/
-├─ public/
-│ └─ index.html
-├─ src/
-│ ├─ assets/ # Imágenes, videos, etc.
-│ ├─ components/ # Componentes reutilizables (e.g. CounterBand)
-│ ├─ sections/ # Secciones de tu portfolio (Profile, Projects, etc.)
-│ ├─ i18n/ # Archivos JSON de traducción
-│ ├─ App.jsx # Layout principal
-│ ├─ main.jsx / index.jsx # Entry point
-│ └─ index.css # Estilos globales y Tailwind base
-├─ package.json
-└─ vite.config.js # Configuración del bundler (base path)
-
----
-
 ## Cómo ejecutar en tu máquina
 
 Clona el repositorio, instala dependencias y ejecuta el proyecto:
 
-```bash
+- En terminal:
 git clone https://github.com/ezecoeli/React-Portfolio.git
 cd React-Portfolio
 npm install
 npm run dev
 
-Abre tu navegador en http://localhost:XXXX
+- Abre tu navegador en http://localhost:XXXX
 
 ---
 
