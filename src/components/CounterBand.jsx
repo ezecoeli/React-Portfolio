@@ -23,7 +23,7 @@ export default function CounterBand({ counters = [], className = '', gradientCol
 
   return (
     <section
-      className={` counter-band bg-gradient-to-r ${gradientColors} text-white flex flex-col md:flex-row justify-around items-center gap-8 relative z-10 ${className}`}
+      className={`counter-band bg-gradient-to-r ${gradientColors} text-white flex flex-col md:flex-row justify-around items-center gap-8 relative z-10 ${className}`}
     >
       {counters.map((c, i) => (
         <div key={i} className="text-center">

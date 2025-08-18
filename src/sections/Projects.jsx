@@ -9,8 +9,8 @@ export default function Projects() {
 
   // Configuración de contadores
   const counters = [
-    { value: 195, label: "Test Cycles", suffix: "+" },
-    { value: 114, label: "Products", suffix: "+" }
+    { value: 195, label: t("testCycles"), suffix: "+" },
+    { value: 114, label: t("products"), suffix: "+" }
   ];
 
   return (
