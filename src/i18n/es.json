@@ -1,0 +1,13 @@
+{
+  "bannerTitle": "BIENVENID@ A MI PORTFOLIO",
+  "profile": "Perfil",
+  "profileDescription": "Soy profesional de **pruebas de software** con experiencia en **testing manual** y **automatizado**, incluyendo el diseño y ejecución de casos de prueba y el manejo de herramientas de **gestión de proyectos**.\n\n Poseo sólidos conocimientos en **programación orientada a objetos** y buenas prácticas de desarrollo, lo que me permite **comprender la lógica del software** y contribuir a la mejora de su calidad con un enfoque **DevOps**.\n\n Me destaco por mi **atención al detalle, capacidad analítica y resolución de problemas**. Trabajo bien en equipo, me adapto rápido a nuevos entornos y metodologías, y mantengo un fuerte compromiso con el **aprendizaje continuo en testing y programación**.",
+  "experience": "Experiencia",
+  "experienceDescription1": "Desde **2021**, me desempeño como **tester de software**, participando en proyectos de **aseguramiento de calidad** para **aplicaciones web, móviles y de escritorio**, además de pruebas en **dispositivos físicos**, asegurando la correcta integración entre hardware y software.\n\nRealizo **pruebas funcionales**, de **regresión**, **exploratorias**, de **usabilidad**, de **localización**, **smoke testing** e **in-home testing**, enfocándome en detectar errores tempranamente y mejorar la **experiencia del usuario**. Me destaco por la **calidad en la documentación de incidencias**, registrando pasos de reproducción, evidencias y niveles de severidad para una comunicación clara con los equipos de desarrollo.",
+  "experienceDescription2": "Además de mi experiencia en **pruebas manuales**, he trabajado en **automatización de pruebas**, desarrollando flujos de pruebas **end-to-end** y evaluando la **performance y estabilidad** de aplicaciones en diferentes entornos. También he diseñado y ejecutado **pruebas de compatibilidad multiplataforma** y validado la **integración de sistemas** de manera exhaustiva.\n\nEsta combinación de **pruebas manuales y automatizadas** me ha permitido consolidar un **perfil sólido en Quality Assurance**, con un enfoque integral que abarca desde la **detección temprana de errores en la experiencia del usuario** hasta la **optimización del rendimiento y la confiabilidad del software**.",
+  "projects": "Proyectos",
+  "viewGithubProjects": "Ver mis proyectos en GitHub",
+  "contact": "Contacto",
+  "light": "Claro",
+  "dark": "Oscuro"
+}
