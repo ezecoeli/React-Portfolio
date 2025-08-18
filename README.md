@@ -6,15 +6,13 @@ El objetivo principal es seguir aprendiendo, experimentar con nuevas herramienta
 ---
 
 ## Tabla de contenido
-1. [Demo en vivo](#-demo-en-vivo)
-2. [Características](#-características)
-3. [Stack tecnológico](#-stack-tecnológico)
-4. [Estructura del proyecto](#-estructura-del-proyecto)
-5. [Cómo ejecutar el proyecto localmente](#-cómo-ejecutar-el-proyecto-localmente)
-6. [Multilenguaje (i18n)](#-multilenguaje-i18n)
-7. [Deploy con GitHub Pages](#-deploy-con-github-pages)
-8. [Contribuciones](#-contribuciones)
-9. [Licencia](#-licencia)
+1. [Demo en vivo]
+2. [Características]
+3. [Stack tecnológico]
+4. [Estructura del proyecto]
+5. [Cómo ejecutar el proyecto localmente]
+6. [Multilenguaje (i18n)]
+7. [Deploy con GitHub Pages]
 
 ---
 
@@ -98,3 +96,7 @@ Agrega este script a package.json:
 
 Luego ejecuta:
 npm run deploy
+
+---
+
+
