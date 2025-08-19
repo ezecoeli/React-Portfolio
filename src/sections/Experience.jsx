@@ -22,13 +22,13 @@ export default function Experience() {
       <div className="experience-grid flex-1">
         {/* Texto superior izquierdo */}
         <motion.div
-          className="flex items-center justify-center p-[40px]"
+          className="text2 flex items-center justify-center p-[40px]"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
           viewport={{ once: true }}
         >
-          <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto pr-[60px]">
+          <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto">
             <ReactMarkdown>
               {t('experienceDescription1')}
             </ReactMarkdown>
@@ -37,7 +37,7 @@ export default function Experience() {
 
         {/* Video superior derecho */}
         <motion.div
-          className="flex items-center justify-center p-4"
+          className="video flex items-center justify-center p-4"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 3.8, type: 'spring', stiffness: 60, delay: 0.3 }}
@@ -54,7 +54,7 @@ export default function Experience() {
 
         {/* Imagen inferior izquierdo */}
         <motion.div
-          className="flex items-center justify-center p-4"
+          className="image flex items-center justify-center p-4"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring', stiffness: 100, delay: 0.4 }}
@@ -69,7 +69,7 @@ export default function Experience() {
 
         {/* Texto inferior derecho */}
         <motion.div
-          className="flex items-center justify-center p-[40px]"
+          className="text1 flex items-center justify-center p-[40px]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring', stiffness: 100, delay: 0.6 }}

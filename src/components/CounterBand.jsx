@@ -8,7 +8,7 @@ export default function CounterBand({ counters = [], className = '', gradientCol
 
     useEffect(() => {
       const controls = animate(0, value, {
-        duration: 2,
+        duration: 5,
         onUpdate(v) {
           setCount(Math.floor(v));
         },

@@ -401,13 +401,22 @@ section {
   }
 }
 
-/* Experience grid responsive */
+/* Experience grid responsive y con reordenamiento */
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: auto auto;
   gap: 2rem;
+  grid-template-areas:
+    "text1 video"
+    "image text2";
 }
+
+/* reasignacion de areas */
+.experience-grid > .text1 { grid-area: text1; }
+.experience-grid > .video { grid-area: video; }
+.experience-grid > .image { grid-area: image; }
+.experience-grid > .text2 { grid-area: text2; }
 
 @media (max-width: 768px) {
   .experience-grid {
@@ -415,6 +424,11 @@ section {
     flex-direction: column;
     gap: 1.5rem;
   }
+  /* reordenar para móvil */
+  .experience-grid > .text1 { order: 3; }
+  .experience-grid > .video { order: 2; }
+  .experience-grid > .text2 { order: 1; }
+  .experience-grid > .image { order: 4; }
 }
 
 /* Footer responsive */
