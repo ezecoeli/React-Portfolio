@@ -37,7 +37,7 @@ export default function Profile() {
       id="profile" 
       className="min-h-[60vh] mb-[50px] flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 px-6 py-16"
     >
-      <div className="container max-w-6xl w-full">
+      <div className="relative container max-w-6xl w-full">
         
         {/* Título */}
         <div className="text-center mb-12">
@@ -47,7 +47,7 @@ export default function Profile() {
         </div>
 
         {/* grilla para foto y texto */}
-        <div className="grid grid-cols-2 gap-6 md:gap-12 items-center mb-12">
+        <div className="profile-grid mb-12">
           
           {/* Columna 1: foto con efectos */}
           <motion.div 
@@ -63,7 +63,7 @@ export default function Profile() {
                 alt="Foto de perfil" 
                 className="dark:brightness-80 w-48 h-48 md:w-56 md:h-56 shadow-2xl border-4 border-blue-500 object-cover hover:border-blue-400 transition-all duration-300" 
               />
-              {/* Efecto de glow */}
+              {/* Efecto glow */}
               <div className="absolute inset-0 rounded-full bg-blue-500 opacity-20 blur-xl animate-pulse"></div>
             </div>
           </motion.div>
@@ -75,7 +75,7 @@ export default function Profile() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto pr-[80px]">
+            <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto pl-[40px] pr-[40px]">
               <ReactMarkdown>
                 {t('profileDescription')}
               </ReactMarkdown>

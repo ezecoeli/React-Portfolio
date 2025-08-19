@@ -69,13 +69,12 @@ function App() {
             className="text-[clamp(1.5rem,4vw,4rem)] text-xl sm:text-3xl md:text-5xl font-bold text-white text-center"
             initial={{ width: 0, borderRightWidth: 4 }}
             animate={{ width: "100%", borderRightWidth: 0 }}
-            transition={{ duration: 2, ease: "linear" }}
+            transition={{ duration: 4, ease: "linear" }}
             style={{
-              whiteSpace: "nowrap",
               overflow: "hidden",
               borderRight: "4px solid white",
               display: "inline-block",
-              maxWidth: "90vw", 
+              whiteSpace: "nowrap", 
             }}
           >
             {t('bannerTitle')}
