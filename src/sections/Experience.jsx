@@ -19,7 +19,7 @@ export default function Experience() {
       </h2>
 
       {/* Cuadrícula/grid */}
-      <div className="grid grid-cols-2 grid-rows-2 gap-8 flex-1">
+      <div className="experience-grid flex-1">
         {/* Texto superior izquierdo */}
         <motion.div
           className="flex items-center justify-center p-[40px]"
