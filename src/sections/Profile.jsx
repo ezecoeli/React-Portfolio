@@ -61,7 +61,7 @@ export default function Profile() {
               <img 
                 src={profilePhoto} 
                 alt="Foto de perfil" 
-                className="dark:brightness-80 w-48 h-48 md:w-56 md:h-56 shadow-2xl border-4 border-blue-500 object-cover hover:border-blue-400 transition-all duration-300" 
+                className="profile-photo dark:brightness-80 w-48 h-48 md:w-56 md:h-56 shadow-2xl border-4 border-blue-500 object-cover hover:border-blue-400 transition-all duration-300" 
               />
               {/* Efecto glow */}
               <div className="absolute inset-0 rounded-full bg-blue-500 opacity-20 blur-xl animate-pulse"></div>
