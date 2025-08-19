@@ -9,7 +9,6 @@ import Projects from './sections/Projects.jsx';
 import Contact from './sections/Contact.jsx';
 import { motion } from 'framer-motion';
 import { IoIosArrowUp } from 'react-icons/io';
-import { FaPlaneUp } from "react-icons/fa6";
 
 import './index.css';
 
@@ -94,7 +93,7 @@ function App() {
 
       {showTopBtn && (
       <button onClick={top} className="topbtn">
-        <FaPlaneUp className="w-6 h-6" />
+        <IoIosArrowUp className="w-6 h-6" />
       </button>
       )}
     </div>
