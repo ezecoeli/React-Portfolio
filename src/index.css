@@ -103,6 +103,10 @@ header {
 header .flex.items-center.space-x-4 button {
   color: white !important;
 }
+header button {
+  color: white !important;
+}
+
 
 /* Enlaces */
 a {
@@ -283,13 +287,6 @@ html, body, #root {
   height: 100%;
 }
 
-body:not(.dark) button {
-  color: #000 !important;
-}
-body.dark button {
-  color: #fff !important;
-}
-
 /* Footer */
 footer {
   background: linear-gradient(135deg, #535458 0%, #000000 100%);
@@ -334,4 +331,46 @@ footer {
   gap: 2rem;
   border-radius: 12px;
   margin: 2rem 1rem;
+}
+
+
+/* NAVBAR RESPONSIVE */
+
+.nav-desktop { 
+  display: none; 
+}
+
+.hamburger {
+  display: inline-flex;
+  color: #fff;         
+  background: transparent;
+  border: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 1050;         
+}
+
+header { color: #fff; }
+
+/* Enlaces del nav siempre blancos */
+header nav a { 
+  color: #fff !important; 
+}
+
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  background: #000;                 
+  border-top: 1px solid #333;
+}
+.mobile-menu a {
+  color: #fff !important;
 }
