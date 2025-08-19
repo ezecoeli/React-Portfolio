@@ -70,7 +70,7 @@
 /* Scroll suave para toda la página */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px;
+  scroll-padding-top: 90px;
 }
 @media (min-width: 768px) {
   html {
@@ -84,6 +84,8 @@ header {
   background-size: 200% 200%;
   animation: gradientShift 3s ease infinite;
   position: fixed;
+  height: 50px;
+  /*margin-top: -20px;*/
   top: 0;
   left: 0;
   right: 0;
@@ -92,6 +94,12 @@ header {
   transition: all 0.3s ease;
   border-bottom: 1px solid black;
   border-top: 1px solid #2c2c2c;
+}
+@media (max-width: 768px) {
+  header {
+    height: 50px;
+    /*margin-top: -40px;*/
+  }
 }
 
 @keyframes gradientShift {
@@ -172,11 +180,11 @@ body {
   min-height: 100vh;
   background-color: var(--bg-light);
   color: var(--text-light);
-  padding-top: 120px; /* móvil */
+  padding-top: 70px; /* móvil */
 }
 @media (min-width: 768px) {
   body {
-    padding-top: 80px; /* desktop */
+    padding-top: 60px; /* desktop */
   }
 }
 

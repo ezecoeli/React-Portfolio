@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FaSun, FaMoon } from "react-icons/fa";
@@ -7,6 +7,7 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const headerRef = useRef(null);
 
   // Detectar si el body ya tiene dark o si el SO esta en modo oscuro
   useEffect(() => {
@@ -24,6 +25,42 @@ const Header = () => {
       document.body.classList.remove("dark");
     }
   }, []);
+
+  // Cerrar menú al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  // Cerrar menú al hacer scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isMenuOpen]);
 
   // Idioma
   const toggleLanguage = () => {
@@ -44,7 +81,10 @@ const Header = () => {
   const handleLinkClick = () => setIsMenuOpen(false);
 
   return (
-    <header className="relative flex justify-between items-center py-4 px-4 md:px-8">
+    <header 
+      ref={headerRef}
+      className="fixed top-0 left-0 right-0 flex justify-between items-center py-4 px-4 md:px-8 z-50"
+    >
       {/* NAV ESCRITORIO */}
       <nav className="nav-desktop items-center">
         <a href="#profile" onClick={handleLinkClick} className="mx-4 hover:text-gray-300 transition-colors">
@@ -62,7 +102,7 @@ const Header = () => {
       </nav>
 
       {/* BOTÓN HAMBURGUESA */}
-      <button onClick={toggleMenu} className="hamburger">
+      <button onClick={toggleMenu} className="ml-[10px] hamburger">
         {isMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
       </button>
 
@@ -78,7 +118,7 @@ const Header = () => {
 
       {/* MENÚ MÓVIL */}
       {isMenuOpen && (
-        <div className="mobile-menu absolute top-full left-0 right-0 shadow-lg z-40">
+        <div className="mobile-menu absolute top-full left-0 right-0 shadow-lg">
           <nav className="flex flex-col">
             <a href="#profile" onClick={handleLinkClick} className="px-6 py-3 hover:bg-gray-800 transition-colors">
               {t("profile")}
