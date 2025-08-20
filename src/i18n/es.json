@@ -1,5 +1,6 @@
 {
   "bannerTitle": "BIENVENIDOS A MI PORTFOLIO !",
+  "name": "const author = 'Ezequiel Coeli';",
   "profile": "Perfil",
   "profileDescription": "Soy profesional de **pruebas de software** con experiencia en **testing manual** y **automatizado**, incluyendo el diseño y ejecución de casos de prueba y el manejo de herramientas de **gestión de proyectos**.\n\n Poseo sólidos conocimientos en **programación orientada a objetos** y buenas prácticas de desarrollo, lo que me permite **comprender la lógica del software** y contribuir a la mejora de su calidad con un enfoque **DevOps**.\n\n Me destaco por mi **atención al detalle, capacidad analítica y resolución de problemas**. Trabajo bien en equipo, me adapto rápido a nuevos entornos y metodologías, y mantengo un fuerte compromiso con el **aprendizaje continuo en testing y programación**.",
   "experience": "Experiencia",
