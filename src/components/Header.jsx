@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FaSun, FaMoon } from "react-icons/fa";
@@ -9,7 +9,6 @@ const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const headerRef = useRef(null);
 
-  // Detectar si el body ya tiene dark o si el SO esta en modo oscuro
   useEffect(() => {
     const prefersDark =
       window.matchMedia &&
