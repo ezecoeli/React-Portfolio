@@ -49,6 +49,27 @@
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
+/* imagen banner */
+.banner-background {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay semitransparente  */
+.banner-overlay {
+  background: rgba(0, 0, 0, 2.9);
+}
+
+/*  para dispositivos móviles */
+@media (max-width: 768px) {
+  .banner-background {
+    
+    background-attachment: scroll;
+  }
+}
+
+
 /* estilos para glitch-h2 */
 .glitch-h2 {
   color: white !important;

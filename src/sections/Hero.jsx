@@ -10,14 +10,14 @@ function Hero() {
     <section className="flex-col relative w-full h-[40vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center text-center mt-[-35px]">
       {/* Imagen de fondo */}
       <div
-        className="absolute inset-0 w-full h-full bg-fixed bg-contain bg-center brightness-90"
+        className="absolute inset-0 w-full h-full bg-contain bg-center brightness-18 banner-background"
         style={{
           backgroundImage: `url(${heroPhoto})`,
         }}
       ></div>
 
       {/* Overlay semitransparente */}
-      <div className="absolute inset-0 bg-black/40 "></div> 
+      <div className="absolute inset-0 bg-black/40 banner-overlay"></div>
 
       {/* Texto */}
       <div className="banner-text relative z-20">
