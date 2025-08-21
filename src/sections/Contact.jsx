@@ -11,7 +11,7 @@ export default function Contact() {
         <h2 className="text-[50px] mb-[50px] font-bold mb-[20px] max-w-xl mx-auto h2-animated">{t('contact')}</h2>
         
         <div className="space-y-6">
-          <div className="flex flex-col gap-[10px] items-center md:items-start">
+          <div className="flex flex-row flex-wrap gap-[50px] mb-[60px] mt-[40px] items-center justify-center md:items-start">
             {/* Teléfono */}
             <a 
               href="tel:+34635592041" 
