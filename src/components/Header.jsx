@@ -9,6 +9,7 @@ const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const headerRef = useRef(null);
 
+  // para detectar si el body ya tiene dark o si el SO esta en modo oscuro
   useEffect(() => {
     const prefersDark =
       window.matchMedia &&

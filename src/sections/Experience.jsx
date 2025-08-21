@@ -37,7 +37,7 @@ export default function Experience() {
 
         {/* Video superior derecho */}
         <motion.div
-          className="video flex items-center justify-center p-4"
+          className="video flex items-center justify-center p-[40px] "
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 3.8, type: 'spring', stiffness: 60, delay: 0.3 }}
@@ -48,13 +48,13 @@ export default function Experience() {
             autoPlay
             loop
             muted
-            className="rounded-lg shadow-lg w-full max-h-[600px] md:max-h-[400px] object-cover" 
+            className="rounded-lg shadow-lg w-full max-h-[600px] md:max-h-[400px] object-cover"
           />
         </motion.div>
 
         {/* Imagen inferior izquierdo */}
         <motion.div
-          className="image flex items-center justify-center p-4"
+          className="image flex items-center justify-center p-4 p-[40px]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring', stiffness: 100, delay: 0.4 }}
@@ -63,7 +63,7 @@ export default function Experience() {
           <img
             src={experiencePhoto}
             alt="Experience"
-            className="rounded-lg shadow-lg w-full max-h-[600px] md:max-h-[400px] object-cover"
+            className="rounded-lg shadow-lg w-full h-[350px] max-h-[600px] md:max-h-[400px] object-cover"
           />
         </motion.div>
 
