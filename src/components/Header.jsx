@@ -26,7 +26,11 @@ const Header = () => {
     }
   }, []);
 
-  // Cerrar menú al hacer clic fuera
+  // Menu hamburguesa
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const handleLinkClick = () => setIsMenuOpen(false);
+
+  // Cerrar el menú hamburguesa al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (headerRef.current && !headerRef.current.contains(event.target)) {
@@ -45,7 +49,7 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  // Cerrar menú al hacer scroll
+  // Cerrar menú hamb. al hacer scroll
   useEffect(() => {
     const handleScroll = () => {
       if (isMenuOpen) {
@@ -75,10 +79,6 @@ const Header = () => {
       return newMode;
     });
   };
-
-  // Menu hamburguesa
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const handleLinkClick = () => setIsMenuOpen(false);
 
   return (
     <header 
