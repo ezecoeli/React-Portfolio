@@ -355,8 +355,11 @@ header nav a {
 }
 
 .mobile-menu {
-  background: #000;                 
+  background: #2f2e2e;       
+  border-radius: 1rem;          
   border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  border-color: #747bff;
 }
 .mobile-menu a {
   color: #fff !important;
