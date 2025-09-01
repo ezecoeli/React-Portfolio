@@ -5,9 +5,11 @@ import { VscVscode } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import ReactMarkdown from 'react-markdown';
 
-import profilePhoto from '../assets/profilePhoto.png';
+import ProfileCard from '../components/ProfileCard';
 
-// Componente para unificar el efecto de iconos
+import avatar from '../assets/avatar.png';
+import codePattern from '../assets/code.svg';
+
 const IconWithPulse = ({ Icon, title }) => (
   <motion.div
     whileHover={{ scale: 1.25 }}
@@ -37,59 +39,52 @@ export default function Profile() {
       id="profile" 
       className="min-h-[60vh] mb-[50px] flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 px-6 py-16"
     >
-      <div className="relative container max-w-6xl w-full">
+      <div className="relative container max-w-3xl w-full flex flex-col items-center">
         
-        {/* Título */}
-        <div className="text-center mb-12">
-          <h2 className="text-[50px] font-bold h2-animated">
-            {t('profile')}
-          </h2>
-        </div>
+        {/* 1. Título */}
+        <h2 className="text-[50px] font-bold h2-animated text-center mb-[80px]">
+          {t('profile')}
+        </h2>
 
-        {/* grilla para foto y texto */}
-        <div className="profile-grid mb-12">
-          
-          {/* Columna 1: foto con efectos */}
-          <motion.div 
-            className="flex justify-center md:justify-end"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            whileHover={{ scale: 1.05, rotate: 2 }}
+        {/* 2. Profile Card */}
+        <ProfileCard
+          name="Ezequiel Coeli"
+          title="QA Engineer"
+          contactText="Contact Me"
+          handle='ezequielcoeli'
+          status='Working'
+          showUserInfo={true}
+          avatarUrl={avatar}
+          iconUrl={codePattern}
+          enableTilt={true}
+          enableMobileTilt={false}
+          onContactClick={() => window.open('https://www.linkedin.com/in/ezequiel-coeli-softwaretestingqa/', '_blank')}
+        />
+
+        {/* 3. Texto profile description */}
+        <motion.div 
+          className="flex flex-col items-center justify-center p-[40px] lg:px-[120px] xl:px-[160px] mt-[40px] max-w-4xl mx-auto"
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <ReactMarkdown
+            components={{
+              p: ({node, ...props}) => (
+                <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto mb-4" {...props} />
+              )
+            }}
           >
-            <div className="relative">
-              <img 
-                src={profilePhoto} 
-                alt="Foto de perfil" 
-                className="profile-photo dark:brightness-80 w-48 h-48 md:w-56 md:h-56 shadow-2xl border-4 border-blue-500 object-cover hover:border-blue-400 transition-all duration-300" 
-              />
-              {/* Efecto glow */}
-              <div className="absolute inset-0 rounded-full bg-blue-500 opacity-20 blur-xl animate-pulse"></div>
-            </div>
-          </motion.div>
+            {t('profileDescription')}
+          </ReactMarkdown>
+        </motion.div>
 
-          {/* Columna 2: texto */}
-          <motion.div 
-            className="flex flex-col justify-center"
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto pl-[40px] pr-[40px]">
-              <ReactMarkdown>
-                {t('profileDescription')}
-              </ReactMarkdown>
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Línea de íconos */}
-        <div className="mt-[80px] flex sm:flex-row flex-wrap justify-center text-[50px] gap-[25px] text-blue-500">
+        {/* 4. Línea de íconos */}
+        <div className="mt-[80px] flex flex-wrap justify-center text-[50px] gap-[25px] text-blue-500 w-full">
           {icons.map(({ component: Icon, title }) => (
             <IconWithPulse key={title} Icon={Icon} title={title} />
           ))}
         </div>
-
       </div>
     </section>
   );

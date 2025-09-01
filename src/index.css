@@ -434,6 +434,7 @@ section {
 }
 
 /* Profile imagen de perfil responsive */
+/*
 .profile-photo {
   width: 20rem;  
   height: 26rem;
@@ -445,10 +446,10 @@ section {
 .profile-photo:hover {
   transform: scale(1.05);
   border-color: #434f98;
-}
+}*/
 
 /* Ajustes responsive */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .profile-grid {
     display: block;
     text-align: center;
@@ -458,7 +459,7 @@ section {
     height: 14rem;
     margin: 0 auto 1rem auto;
   }
-}
+}*/
 
 @media (min-width: 769px) {
   .profile-grid {

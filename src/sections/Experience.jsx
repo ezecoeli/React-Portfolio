@@ -22,17 +22,21 @@ export default function Experience() {
       <div className="experience-grid flex-1">
         {/* Texto superior izquierdo */}
         <motion.div
-          className="text1 flex items-center justify-center p-[40px]"
+          className="text1 flex flex-col items-center justify-center p-[40px]"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
           viewport={{ once: true }}
         >
-          <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto">
-            <ReactMarkdown>
-              {t('experienceDescription1')}
-            </ReactMarkdown>
-          </p>
+          <ReactMarkdown
+            components={{
+              p: ({node, ...props}) => (
+                <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto mb-4" {...props} />
+              )
+            }}
+          >
+            {t('experienceDescription1')}
+          </ReactMarkdown>
         </motion.div>
 
         {/* Video superior derecho */}
@@ -69,17 +73,21 @@ export default function Experience() {
 
         {/* Texto inferior derecho */}
         <motion.div
-          className="text2 flex items-center justify-center p-[40px]"
+          className="text2 flex flex-col items-center justify-center p-[40px]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring', stiffness: 100, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto pr-[10px]">
-            <ReactMarkdown>
-              {t('experienceDescription2')}
-            </ReactMarkdown>
-          </p>
+          <ReactMarkdown
+            components={{
+              p: ({node, ...props}) => (
+                <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto mb-4 pr-[10px]" {...props} />
+              )
+            }}
+          >
+            {t('experienceDescription2')}
+          </ReactMarkdown>
         </motion.div>
       </div>
     </section>
