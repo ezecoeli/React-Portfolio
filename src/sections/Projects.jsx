@@ -61,7 +61,7 @@ export default function Projects() {
                   <SiTailwindcss className="text-blue-600 dark:text-blue-400 transition-transform duration-300 group-hover:scale-110" />
                   <SiKonva className="text-green-600 dark:text-green-400 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <p className="text-base text-gray-200 text-center max-w-md mx-auto leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base  text-gray-200 text-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto leading-relaxed px-2 sm:px-4">
                   {t('managerPlaneToolDescription')}
                 </p>
               </div>
