@@ -118,18 +118,18 @@ const Header = () => {
 
       {/* MENÚ MÓVIL */}
       {isMenuOpen && (
-        <div className="mobile-menu absolute top-full left-0 right-0 shadow-lg">
+        <div className="mobile-menu absolute top-full left-0 w-auto min-w-[160px] max-w-[200px] shadow-lg">
           <nav className="flex flex-col">
-            <a href="#profile" onClick={handleLinkClick} className="px-6 py-3 hover:bg-gray-800 transition-colors">
+            <a href="#profile" onClick={handleLinkClick} className="px-4 py-3 hover:bg-gray-800 transition-colors whitespace-nowrap">
               {t("profile")}
             </a>
-            <a href="#experience" onClick={handleLinkClick} className="px-6 py-3 hover:bg-gray-800 transition-colors">
+            <a href="#experience" onClick={handleLinkClick} className="px-4 py-3 hover:bg-gray-800 transition-colors whitespace-nowrap">
               {t("experience")}
             </a>
-            <a href="#projects" onClick={handleLinkClick} className="px-6 py-3 hover:bg-gray-800 transition-colors">
+            <a href="#projects" onClick={handleLinkClick} className="px-4 py-3 hover:bg-gray-800 transition-colors whitespace-nowrap">
               {t("projects")}
             </a>
-            <a href="#contact" onClick={handleLinkClick} className="px-6 py-3 hover:bg-gray-800 transition-colors">
+            <a href="#contact" onClick={handleLinkClick} className="px-4 py-3 hover:bg-gray-800 transition-colors whitespace-nowrap">
               {t("contact")}
             </a>
           </nav>
