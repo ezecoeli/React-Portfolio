@@ -37,12 +37,12 @@ export default function Profile() {
   return (
     <section 
       id="profile" 
-      className="min-h-[60vh] mb-[50px] flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 px-6 py-16"
+      className="min-h-[60vh] flex flex-col items-center justify-center bg-gray-100 dark:bg-black text-gray-900 dark:text-gray-100 px-6 py-16"
     >
       <div className="relative container max-w-3xl w-full flex flex-col items-center">
         
         {/* 1. Título */}
-        <h2 className="text-[50px] font-bold h2-animated text-center mb-[80px]">
+        <h2 className="text-[50px] font-bold h2-animated text-center mb-[80px] mt-[80px]">
           {t('profile')}
         </h2>
 
@@ -80,7 +80,7 @@ export default function Profile() {
         </motion.div>
 
         {/* 4. Línea de íconos */}
-        <div className="mt-[80px] flex flex-wrap justify-center text-[50px] gap-[25px] text-blue-500 w-full">
+        <div className="mb-[80px] mt-[50px] flex flex-wrap justify-center text-[50px] gap-[25px] w-full">
           {icons.map(({ component: Icon, title }) => (
             <IconWithPulse key={title} Icon={Icon} title={title} />
           ))}

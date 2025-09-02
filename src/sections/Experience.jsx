@@ -11,10 +11,10 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="mb-[10px] bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-8 flex flex-col gap-8"
+      className="bg-gray-200 dark:bg-black text-gray-900 dark:text-gray-100 p-8 flex flex-col gap-8"
     >
       {/* Título central */}
-      <h2 className="text-[50px] font-bold mb-6 max-w-xl mx-auto h2-animated">
+      <h2 className="text-[50px] font-bold mb-[40px] mt-[80px] max-w-xl mx-auto h2-animated">
         {t('experience')}
       </h2>
 

@@ -1,43 +1,73 @@
-import { animate } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
-export default function CounterBand({ counters = [], className = '', gradientColors = 'from-purple-600 to-indigo-500' }) {
+const CounterBand = ({ counters, className = "" }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [counts, setCounts] = useState(counters.map(() => 0));
+  const ref = useRef(null);
 
-  function Counter({ value }) {
-    const [count, setCount] = useState(0);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          startCounting();
+        } else {
+          setIsVisible(false);
+          setCounts(counters.map(() => 0)); // Reset counters
+        }
+      },
+      { threshold: 0.5 }
+    );
 
-    useEffect(() => {
-      const controls = animate(0, value, {
-        duration: 5,
-        onUpdate(v) {
-          setCount(Math.floor(v));
-        },
-      });
-      return () => controls.stop();
-    }, [value]);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
 
-    return <span>{count}</span>;
-  }
+    return () => observer.disconnect();
+  }, []);
 
-  if (!counters.length) return null;
+  const startCounting = () => {
+    counters.forEach((counter, index) => {
+      let start = 0;
+      const increment = counter.value / 100;
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= counter.value) {
+          start = counter.value;
+          clearInterval(timer);
+        }
+        setCounts(prev => {
+          const newCounts = [...prev];
+          newCounts[index] = Math.floor(start);
+          return newCounts;
+        });
+      }, 20);
+    });
+  };
 
   return (
-    <section
-      className={`counter-band bg-gradient-to-r ${gradientColors} text-white flex flex-col md:flex-row justify-around items-center gap-8 relative z-10 ${className}`}
+    <motion.div 
+      ref={ref}
+      className={`counter-band ${className}`} 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+      transition={{ duration: 0.6 }}
     >
-      {counters.map((c, i) => (
-        <div key={i} className="text-center">
-          <div className="text-4xl md:text-5xl font-bold">
-            <Counter value={c.value} />
-            {c.suffix || ''}
+      <div className="flex justify-center space-x-8 relative z-10">
+        {counters.map((counter, index) => (
+          <div key={index} className="text-center">
+            <div className="text-3xl font-bold text-white mb-2">
+              {counts[index]}{counter.suffix}
+            </div>
+            <div className="text-sm text-white/90 font-medium">
+              {counter.label}
+            </div>
           </div>
-          <div className="mt-2 text-lg md:text-xl">{c.label}</div>
-        </div>
-      ))}
-    </section>
+        ))}
+      </div>
+    </motion.div>
   );
-}
+};
 
-
-
-
+export default CounterBand;

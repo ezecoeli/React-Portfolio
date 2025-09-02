@@ -17,7 +17,7 @@ function Hero() {
       ></div>
 
       {/* Overlay semitransparente */}
-      <div className="absolute inset-0 bg-black/40 banner-overlay"></div>
+      <div className="absolute inset-0 bg-black/85 banner-overlay"></div>
 
       {/* Texto */}
       <div className="banner-text relative z-20">

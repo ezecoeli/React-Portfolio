@@ -7,11 +7,13 @@
   "experienceDescription1": "Since **2021**, I have been working as a **software tester**, taking part in numerous **quality assurance projects for web, mobile, and desktop applications**, as well as conducting tests on **physical devices** to validate the integration between hardware and software.\n\n My work involves carrying out **functional**, **regression**, **exploratory**, **usability**, **localisation**, **smoke**, and **in-home testing**, with the aim of detecting issues at an early stage and enhancing the end-**user experience**. I place great importance on the **quality of bug reports and documentation**, recording reproduction steps, evidence, and severity levels to ensure clear **communication with development teams**.",
   "experienceDescription2":"In addition to my experience in **manual testing**, I have worked in **test automation**, developing **end-to-end** test flows and evaluating the performance and stability of applications across **different environments**. I have also designed and executed **cross-platform compatibility** tests and thoroughly validated system integrations.\n\n This combination of manual and automated testing has allowed me to build a **strong profile in Quality Assurance**, with a comprehensive approach that ranges from **early detection of user experience issues** to **optimizing software performance** and **reliability**.",
   "projects": "Projects",
+  "managerPlaneToolDescription": "Manage inventories of IT devices in any establishment, and organise them across different layouts/zones.\n\n Add devices and assign them to the desired location, add objects and create shapes to represent your working area.",
   "products": "Products",
   "testCycles": "Test Cycles",
   "viewGithubProjects": "View my GitHub projects",
   "contact": "Contact",
   "light": "Light",
   "dark": "Dark",
-  "allRightsReserved": "© 2025 All rights reserved"
+  "allRightsReserved": "© 2025 All rights reserved",
+  "viewProject": "View Project"
 }

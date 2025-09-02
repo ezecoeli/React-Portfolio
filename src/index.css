@@ -57,9 +57,9 @@
 }
 
 /* Overlay semitransparente  */
-.banner-overlay {
+/*.banner-overlay {
   background: rgba(0, 0, 0, 2.9);
-}
+}/*
 
 /*  para dispositivos móviles */
 @media (max-width: 768px) {
@@ -146,6 +146,7 @@ html {
 /* BackToTop Button */
 .topbtn {
   position: fixed;
+  display: flex;
   width: 2.5rem;
   height: 2.5rem;
   bottom: 5rem;
@@ -162,17 +163,42 @@ html {
   align-items: center;
 }
 
- /* banda de contadores */
+ /* banda de contadores - Glassmorphism */
 .counter-band {
-  background: linear-gradient(90deg, #434f98 0%, rgb(116, 123, 255) 100%);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(116, 123, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
   color: white;
-  padding: 4rem 2rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 2rem;
-  border-radius: 12px;
-  margin: 2rem 1rem;
+  padding: 1.5rem; /* Equivalente a p-6 de Tailwind */
+  border-radius: 0.75rem; /* Equivalente a rounded-xl */
+  position: relative;
+  overflow: hidden;
+}
+
+.counter-band::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.counter-band:hover::before {
+  left: 100%;
 }
 
 /* Headings */
@@ -218,12 +244,7 @@ h1 {
 }
 
 /* Parrafos */
-p {
-  line-height: 2;
-  /*font-weight: bold;*/
-  font-size: 0.9rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
+
 
 /* Botones */
 button {
@@ -514,4 +535,177 @@ footer {
   border-top: 1px solid #2c2c2c;
   color: white !important;
   margin-top: 0;
+}
+
+
+/* Carousel */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #747bff !important;
+  filter: drop-shadow(0 2px 6px rgba(93,112,235,0.3));
+  width: 44px !important;
+  height: 44px !important;
+  font-size: 40px !important;
+  margin-top: calc(0px - (44px / 2)) !important;
+  transition: all 0.3s ease !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  backdrop-filter: blur(10px) !important;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: inherit !important;
+  font-weight: 900 !important;
+}
+
+/* Hover effects para las flechas */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #ffffff !important;
+  background: rgba(116, 123, 255, 0.8) !important;
+  transform: scale(1.1) !important;
+  filter: drop-shadow(0 4px 12px rgba(93,112,235,0.6)) !important;
+  box-shadow: 0 0 20px rgba(116, 123, 255, 0.5) !important;
+}
+
+/* Efecto de brillo para las flechas */
+.swiper-button-next::before,
+.swiper-button-prev::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-button-next:hover::before,
+.swiper-button-prev:hover::before {
+  opacity: 1;
+}
+
+/* Responsive FORZADO para las flechas */
+/* Tablet */
+@media (max-width: 768px) {
+  .swiper .swiper-button-next,
+  .swiper .swiper-button-prev {
+    width: 40px !important;
+    height: 40px !important;
+    margin-top: calc(0px - (40px / 2)) !important;
+  }
+  
+  .swiper .swiper-button-next:after,
+  .swiper .swiper-button-prev:after {
+    font-size: 18px !important;
+  }
+}
+
+/* Móvil grande */
+@media (max-width: 600px) {
+  .swiper .swiper-button-next,
+  .swiper .swiper-button-prev {
+    width: 36px !important;
+    height: 36px !important;
+    margin-top: calc(0px - (36px / 2)) !important;
+  }
+  
+  .swiper .swiper-button-next:after,
+  .swiper .swiper-button-prev:after {
+    font-size: 16px !important;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  .swiper .swiper-button-next,
+  .swiper .swiper-button-prev {
+    width: 32px !important;
+    height: 32px !important;
+    margin-top: calc(0px - (32px / 2)) !important;
+  }
+  
+  .swiper .swiper-button-next:after,
+  .swiper .swiper-button-prev:after {
+    font-size: 14px !important;
+  }
+}
+
+/* Móvil muy pequeño */
+@media (max-width: 360px) {
+  .swiper .swiper-button-next,
+  .swiper .swiper-button-prev {
+    width: 28px !important;
+    height: 28px !important;
+    margin-top: calc(0px - (28px / 2)) !important;
+  }
+  
+  .swiper .swiper-button-next:after,
+  .swiper .swiper-button-prev:after {
+    font-size: 8px !important;
+  }
+}
+
+/* Bullets del carousel */
+.swiper-pagination-bullet {
+  background: #969cc2 !important;
+  opacity: 0.5 !important;
+  transition: all 0.3s ease !important;
+  border-radius: 50% !important;
+  width: 12px !important;
+  height: 12px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Hover effect para bullets */
+.swiper-pagination-bullet:hover {
+  opacity: 0.8 !important;
+  transform: scale(1.2) !important;
+  background: #747bff !important;
+  box-shadow: 0 0 10px rgba(116, 123, 255, 0.5) !important;
+}
+
+/* Bullet activo */
+.swiper-pagination-bullet-active {
+  background: #747bff !important;
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 8px rgba(116, 123, 255, 0.4) !important;
+}
+
+/* Efecto de brillo para bullets */
+.swiper-pagination-bullet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet:hover::before,
+.swiper-pagination-bullet-active::before {
+  opacity: 1;
+}
+
+/* Efecto de pulso para bullet activo */
+.swiper-pagination-bullet-active {
+  animation: bulletPulse 2s ease-in-out infinite;
+}
+
+@keyframes bulletPulse {
+  0%, 100% { 
+    box-shadow: 0 0 8px rgba(116, 123, 255, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 15px rgba(116, 123, 255, 0.7);
+  }
 }
