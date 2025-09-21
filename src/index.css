@@ -799,3 +799,259 @@ footer {
     height: 160px !important;
   }
 }
+
+/* Estilos para el título Technologies */
+.qa-carousel .border-gray-700\/50 {
+  border-color: rgba(75, 85, 99, 0.5);
+}
+
+/* Responsive para el título Technologies */
+@media (max-width: 640px) {
+  .qa-carousel h3 {
+    font-size: 1.5rem;
+  }
+  
+  .qa-carousel h3 .w-16 {
+    width: 2.5rem;
+  }
+  
+  .qa-carousel h3 .h-0\.5 {
+    height: 1.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .qa-carousel h3 {
+    font-size: 1.25rem;
+  }
+  
+  .qa-carousel h3 .w-16 {
+    width: 2rem;
+  }
+}
+
+/* Estilos para las herramientas de testing */
+.qa-carousel .tool-item {
+  transition: all 0.3s ease;
+  transform: scale(1);
+  flex-shrink: 0;
+}
+
+.qa-carousel .tool-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Scroll personalizado para la card de tecnologías */
+.qa-carousel .overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.qa-carousel .overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(75, 85, 99, 0.3);
+  border-radius: 2px;
+}
+
+.qa-carousel .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.6);
+  border-radius: 2px;
+}
+
+.qa-carousel .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.8);
+}
+
+/* Responsive para herramientas de testing */
+@media (max-width: 640px) {
+  .qa-carousel .tool-item {
+    padding: 0.25rem 0.375rem;
+  }
+  
+  .qa-carousel .tool-item span {
+    font-size: 0.625rem;
+  }
+  
+  .qa-carousel .tool-item svg {
+    font-size: 0.75rem;
+  }
+  
+  .qa-carousel .max-h-\[360px\] {
+    max-height: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .qa-carousel .max-h-\[360px\] {
+    max-height: 320px;
+  }
+}
+
+/* Efectos para títulos de sección proyectos */
+.section-title {
+  position: relative;
+  background: linear-gradient(135deg, currentColor 0%, currentColor 60%, rgba(255,255,255,0.8) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s ease;
+  overflow: hidden;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  transition: transform 0.8s ease;
+  transform-origin: center;
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+.section-title:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.section-title:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+/* Efectos específicos para Testing */
+.testing-title {
+  letter-spacing: 0.5px;
+  text-shadow: 
+    0 4px 8px rgba(59, 130, 246, 0.3),
+    0 2px 4px rgba(59, 130, 246, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0 2px 6px rgba(59, 130, 246, 0.2));
+}
+
+.testing-title:hover {
+  text-shadow: 
+    0 6px 12px rgba(59, 130, 246, 0.4),
+    0 3px 6px rgba(59, 130, 246, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+}
+
+.testing-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.testing-title:hover::after {
+  opacity: 1;
+  animation: shimmer 1.5s ease-in-out;
+}
+
+/* Efectos específicos para Desarrollo Web */
+.dev-title {
+  letter-spacing: 0.5px;
+  text-shadow: 
+    0 4px 8px rgba(16, 185, 129, 0.3),
+    0 2px 4px rgba(16, 185, 129, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.2));
+}
+
+.dev-title:hover {
+  text-shadow: 
+    0 6px 12px rgba(16, 185, 129, 0.4),
+    0 3px 6px rgba(16, 185, 129, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.3));
+}
+
+.dev-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(16, 185, 129, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.dev-title:hover::after {
+  opacity: 1;
+  animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { 
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Responsive para títulos de sección - ACTUALIZADO */
+@media (max-width: 768px) {
+  .section-title {
+    letter-spacing: 0.25px;
+    text-shadow: 
+      0 3px 6px rgba(0, 0, 0, 0.25),
+      0 1px 3px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.1));
+  }
+  
+  .section-title::before {
+    width: 40px;
+    height: 1.5px;
+    bottom: -6px;
+  }
+  
+  .testing-title {
+    text-shadow: 
+      0 3px 6px rgba(59, 130, 246, 0.25),
+      0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dev-title {
+    text-shadow: 
+      0 3px 6px rgba(16, 185, 129, 0.25),
+      0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title::before {
+    width: 30px;
+    height: 1px;
+    bottom: -4px;
+  }
+  
+  .section-title {
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.2),
+      0 1px 2px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
+  }
+}
