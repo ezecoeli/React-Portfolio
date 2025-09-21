@@ -7,7 +7,6 @@ import 'swiper/css/pagination';
 
 import projectsPhoto from '../assets/projectsPhoto.jpg';
 import mptImage from '../assets/MPT-SS.png';
-import { FaGithub } from 'react-icons/fa';
 import { SiTailwindcss, SiJavascript, SiKonva, SiReact } from "react-icons/si";
 import { motion } from 'framer-motion';
 import CounterBand from '../components/CounterBand.jsx';
@@ -19,8 +18,8 @@ export default function Projects() {
 
   // Configuración de contadores
   const counters = [
-    { value: 206, label: t("testCycles"), suffix: "+" },
-    { value: 118, label: t("products"), suffix: "+" }
+    { value: 239, label: t("testCycles"), suffix: "+" },
+    { value: 136, label: t("products"), suffix: "+" }
   ];
 
   return (
@@ -47,14 +46,14 @@ export default function Projects() {
               rel="noopener noreferrer"
               className="block group"
             >
-              <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center px-4 py-8 transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:scale-[1.02] group-hover:-translate-y-1">
+              <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center px-4 py-8 transition-all duration-300 ease-in-out">
                 <img
                   src={mptImage}
                   alt="ManagerPlaneTool"
-                  className="w-full max-w-md object-cover rounded-lg mb-6 mx-auto transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  className="w-full max-w-md object-cover rounded-lg mb-6 mx-auto transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-blue-500/20"
                 />
                 
-                <h3 className="text-2xl font-bold mb-4 text-white text-center transition-colors duration-300 ">ManagerPlaneTool</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white text-center ">ManagerPlaneTool</h3>
                 <div className="flex text-[20px] space-x-[12px] mb-4 justify-center">
                   <SiReact className="text-cyan-600 dark:text-cyan-400 transition-transform duration-300 group-hover:scale-110" />
                   <SiJavascript className="text-yellow-600 dark:text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
@@ -85,7 +84,7 @@ export default function Projects() {
                 <img
                   src={projectsPhoto}
                   alt="Projects"
-                  className="rounded-lg shadow-lg w-full max-w-md h-[220px] object-cover mx-auto relative z-10 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                  className="rounded-lg shadow-lg w-full max-w-md h-[220px] object-cover mx-auto relative z-10 transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110 group-hover:shadow-2xl"
                 />
               </motion.div>
 
