@@ -56,11 +56,6 @@
   background-position: center;
 }
 
-/* Overlay semitransparente  */
-/*.banner-overlay {
-  background: rgba(0, 0, 0, 2.9);
-}/*
-
 /*  para dispositivos móviles */
 @media (max-width: 768px) {
   .banner-background {
@@ -262,9 +257,6 @@ h1 {
   }
 }
 
-/* Parrafos */
-
-
 /* Botones */
 button {
   border-radius: 8px;
@@ -409,10 +401,7 @@ header nav a {
 #contact a:visited {
   color: inherit;
 }
-/*#contact a:visited .text-blue-500,
-#contact a .text-blue-500 {
-  color: #3b82f6 !important;
-}*/
+
 
 #projects a:visited {
   color: inherit;
@@ -452,10 +441,7 @@ body {
   a:hover {
     color: #747bff;
   }
-  /*button {
-    background-color: #f9f9f9;
-    color: var(--text-light);
-  }*/
+  
 }
 
 /* Tailwind dark mode base */
@@ -473,34 +459,6 @@ section {
   /*border-bottom: 1px solid #e5e7eb;*/
 }
 
-/* Profile imagen de perfil responsive */
-/*
-.profile-photo {
-  width: 20rem;  
-  height: 26rem;
-  object-fit: cover;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.profile-photo:hover {
-  transform: scale(1.05);
-  border-color: #434f98;
-}*/
-
-/* Ajustes responsive */
-/*@media (max-width: 768px) {
-  .profile-grid {
-    display: block;
-    text-align: center;
-  }
-  .profile-photo {
-    width: 10rem;
-    height: 14rem;
-    margin: 0 auto 1rem auto;
-  }
-}*/
-
 @media (min-width: 769px) {
   .profile-grid {
     display: grid;
@@ -510,7 +468,7 @@ section {
   }
 }
 
-/* Experience grid responsive y con reordenamiento */
+/* Experience grid responsive */
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1012,7 +970,7 @@ footer {
   }
 }
 
-/* Responsive para títulos de sección - ACTUALIZADO */
+/* Responsive para títulos de sección */
 @media (max-width: 768px) {
   .section-title {
     letter-spacing: 0.25px;

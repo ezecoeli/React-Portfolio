@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
+import PixelCard from '../components/PixelCard';
 
 import experienceVideo from '../assets/experienceVideo.mp4';
 import experiencePhoto from '../assets/experiencePhoto.jpg';
@@ -18,7 +19,7 @@ export default function Experience() {
         {t('experience')}
       </h2>
 
-      {/* Cuadrícula/grid */}
+      {/* grid */}
       <div className="experience-grid flex-1">
         {/* Texto superior izquierdo */}
         <motion.div
@@ -39,36 +40,50 @@ export default function Experience() {
           </ReactMarkdown>
         </motion.div>
 
-        {/* Video superior derecho */}
+        {/* PixelCard con video superior derecho  */}
         <motion.div
-          className="video flex items-center justify-center p-[40px] "
+          className="video flex items-center justify-center p-[40px]"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 3.8, type: 'spring', stiffness: 60, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <video
-            src={experienceVideo}
-            autoPlay
-            loop
-            muted
-            className="rounded-lg shadow-lg w-full max-h-[600px] md:max-h-[400px] object-cover"
-          />
+          <PixelCard 
+            variant="default" 
+            className="w-full h-full"
+          >
+            <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+              <video
+                src={experienceVideo}
+                autoPlay
+                loop
+                muted
+                className="w-full h-full object-cover rounded-lg opacity-80 hover:opacity-10 transition-opacity duration-500"
+              />
+            </div>
+          </PixelCard>
         </motion.div>
 
-        {/* Imagen inferior izquierdo */}
+        {/* PixelCard con imagen inferior izquierdo */}
         <motion.div
-          className="image flex items-center justify-center p-4 p-[40px]"
+          className="image flex items-center justify-center p-[40px]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring', stiffness: 100, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <img
-            src={experiencePhoto}
-            alt="Experience"
-            className="rounded-lg shadow-lg w-full h-[350px] max-h-[600px] md:max-h-[400px] object-cover"
-          />
+          <PixelCard 
+            variant="default" 
+            className="w-full h-full"
+          >
+            <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+              <img
+                src={experiencePhoto}
+                alt="Experience"
+                className="w-full h-full object-cover rounded-lg opacity-80 hover:opacity-60 transition-opacity duration-500"
+              />
+            </div>
+          </PixelCard>
         </motion.div>
 
         {/* Texto inferior derecho */}
@@ -93,6 +108,3 @@ export default function Experience() {
     </section>
   );
 }
-
-
-

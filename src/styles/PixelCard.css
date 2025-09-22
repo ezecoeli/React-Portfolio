@@ -1,0 +1,505 @@
+.pixel-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.pixel-card {
+  height: 100%;
+  width: 100%;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border-radius: 25px;
+  isolation: isolate;
+  transition: border-color 200ms cubic-bezier(0.5, 1, 0.89, 1);
+  user-select: none;
+}
+
+.pixel-card img {
+  position: absolute !important;
+  z-index: 1 !important;
+  border-radius: 25px !important;
+}
+
+.pixel-card:hover .pixel-canvas {
+  opacity: 1;
+}
+
+.pixel-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, #09090b, transparent 85%);
+  opacity: 0;
+  transition: opacity 800ms cubic-bezier(0.5, 1, 0.89, 1);
+  z-index: 0;
+}
+
+.pixel-card:hover::before,
+.pixel-card:focus-within::before {
+  opacity: 0.3;
+}
+
+/* PixelCard integration in Experience section */
+.experience-grid .pixel-card {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  border-radius: 15px;
+}
+
+.experience-grid .pixel-card:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+.experience-grid .pixel-card img {
+  opacity: 0.8 !important;
+  transition: opacity 0.5s ease !important;
+}
+
+.experience-grid .pixel-card:hover img {
+  opacity: 0.5 !important;
+}
+
+.experience-grid .pixel-card .pixel-canvas {
+  opacity: 0.6;
+}
+
+.experience-grid .pixel-card:hover .pixel-canvas {
+  opacity: 0.9;
+}
+
+/* Responsive breakpoints */
+
+/* Pantallas ultra grandes (1920px+) */
+@media (min-width: 1920px) {
+  .experience-grid .pixel-card {
+    border-radius: 20px;
+  }
+}
+
+/* Pantallas grandes (1400px - 1919px) */
+@media (min-width: 1400px) and (max-width: 1919px) {
+  .experience-grid .pixel-card {
+    border-radius: 18px;
+  }
+}
+
+/* Pantallas medianas-grandes (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .experience-grid .pixel-card {
+    border-radius: 16px;
+  }
+}
+
+/* Pantallas medianas (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .experience-grid .pixel-card {
+    border-radius: 15px;
+  }
+}
+
+/* Tablet landscape (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .experience-grid .pixel-card {
+    border-radius: 14px;
+  }
+}
+
+/* Tablet portrait (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .pixel-card {
+    min-height: 280px;
+  }
+  
+  .experience-grid .pixel-card {
+    border-radius: 12px;
+  }
+  
+  .experience-grid .pixel-card img {
+    opacity: 0.85 !important;
+  }
+}
+
+/* Móvil grande (480px - 575px) */
+@media (min-width: 480px) and (max-width: 575px) {
+  .pixel-card {
+    min-height: 260px;
+  }
+  
+  .experience-grid .pixel-card {
+    border-radius: 12px;
+  }
+  
+  .experience-grid .pixel-card img {
+    opacity: 0.85 !important;
+  }
+  
+  .experience-grid .pixel-card:hover img {
+    opacity: 0.6 !important;
+  }
+}
+
+/* Móvil mediano (400px - 479px) */
+@media (min-width: 400px) and (max-width: 479px) {
+  .pixel-card {
+    min-height: 240px;
+  }
+  
+  .experience-grid .pixel-card {
+    border-radius: 10px;
+  }
+  
+  .experience-grid .pixel-card img {
+    opacity: 0.9 !important;
+  }
+  
+  .experience-grid .pixel-card:hover img {
+    opacity: 0.7 !important;
+  }
+  
+  .experience-grid .pixel-card .pixel-canvas {
+    opacity: 0.5;
+  }
+  
+  .experience-grid .pixel-card:hover .pixel-canvas {
+    opacity: 0.8;
+  }
+}
+
+/* Móvil pequeño (320px - 399px) */
+@media (min-width: 320px) and (max-width: 399px) {
+  .pixel-card {
+    min-height: 220px;
+  }
+  
+  .experience-grid .pixel-card {
+    border-radius: 8px;
+  }
+  
+  .experience-grid .pixel-card img {
+    opacity: 0.9 !important;
+  }
+  
+  .experience-grid .pixel-card:hover img {
+    opacity: 0.75 !important;
+  }
+  
+  .experience-grid .pixel-card .pixel-canvas {
+    opacity: 0.4;
+  }
+  
+  .experience-grid .pixel-card:hover .pixel-canvas {
+    opacity: 0.7;
+  }
+}
+
+/* Móvil muy pequeño (hasta 319px) */
+@media (max-width: 319px) {
+  .pixel-card {
+    min-height: 200px;
+  }
+  
+  .experience-grid .pixel-card {
+    border-radius: 6px;
+  }
+  
+  .experience-grid .pixel-card img {
+    opacity: 0.95 !important;
+  }
+  
+  .experience-grid .pixel-card:hover img {
+    opacity: 0.8 !important;
+  }
+  
+  .experience-grid .pixel-card .pixel-canvas {
+    opacity: 0.3;
+  }
+  
+  .experience-grid .pixel-card:hover .pixel-canvas {
+    opacity: 0.6;
+  }
+}
+
+/* Dark mode compatibility */
+.dark .experience-grid .pixel-card {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.dark .experience-grid .pixel-card:hover {
+  border-color: rgba(59, 130, 246, 0.7);
+}
+
+.dark .experience-grid .pixel-card img {
+  opacity: 0.8 !important;
+}
+
+.dark .experience-grid .pixel-card:hover img {
+  opacity: 0.5 !important;
+}
+
+.dark .experience-grid .pixel-card .pixel-canvas {
+  opacity: 0.7;
+}
+
+.dark .experience-grid .pixel-card:hover .pixel-canvas {
+  opacity: 1;
+}
+
+/* Dark mode responsive adjustments */
+@media (max-width: 576px) {
+  .dark .experience-grid .pixel-card img {
+    opacity: 0.85 !important;
+  }
+  
+  .dark .experience-grid .pixel-card:hover img {
+    opacity: 0.6 !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .dark .experience-grid .pixel-card img {
+    opacity: 0.9 !important;
+  }
+  
+  .dark .experience-grid .pixel-card:hover img {
+    opacity: 0.7 !important;
+  }
+}
+
+/* Video PixelCard specific styles */
+.experience-grid .video .pixel-card {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.experience-grid .video .pixel-card:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+.experience-grid .video .pixel-card video {
+  opacity: 0.8 !important;
+  transition: opacity 0.5s ease !important;
+}
+
+.experience-grid .video .pixel-card:hover video {
+  opacity: 0.6 !important;
+}
+
+.experience-grid .video .pixel-card .pixel-canvas {
+  opacity: 0.6;
+}
+
+.experience-grid .video .pixel-card:hover .pixel-canvas {
+  opacity: 0.9;
+}
+
+/* Video responsivo dentro del PixelCard */
+.experience-grid .video .pixel-card video {
+  position: absolute !important;
+  z-index: 1 !important;
+  border-radius: 25px !important;
+}
+
+/* Responsive para video PixelCard */
+@media (min-width: 1920px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 20px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 20px !important;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1919px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 18px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 18px !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 16px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 16px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 15px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 15px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 14px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 14px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 12px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 12px !important;
+    opacity: 0.85 !important;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 575px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 12px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 12px !important;
+    opacity: 0.85 !important;
+  }
+  
+  .experience-grid .video .pixel-card:hover video {
+    opacity: 0.6 !important;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 479px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 10px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 10px !important;
+    opacity: 0.9 !important;
+  }
+  
+  .experience-grid .video .pixel-card:hover video {
+    opacity: 0.7 !important;
+  }
+  
+  .experience-grid .video .pixel-card .pixel-canvas {
+    opacity: 0.5;
+  }
+  
+  .experience-grid .video .pixel-card:hover .pixel-canvas {
+    opacity: 0.8;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 399px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 8px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 8px !important;
+    opacity: 0.9 !important;
+  }
+  
+  .experience-grid .video .pixel-card:hover video {
+    opacity: 0.75 !important;
+  }
+  
+  .experience-grid .video .pixel-card .pixel-canvas {
+    opacity: 0.4;
+  }
+  
+  .experience-grid .video .pixel-card:hover .pixel-canvas {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 319px) {
+  .experience-grid .video .pixel-card {
+    border-radius: 6px;
+  }
+  
+  .experience-grid .video .pixel-card video {
+    border-radius: 6px !important;
+    opacity: 0.95 !important;
+  }
+  
+  .experience-grid .video .pixel-card:hover video {
+    opacity: 0.8 !important;
+  }
+  
+  .experience-grid .video .pixel-card .pixel-canvas {
+    opacity: 0.3;
+  }
+  
+  .experience-grid .video .pixel-card:hover .pixel-canvas {
+    opacity: 0.6;
+  }
+}
+
+/* Dark mode para video PixelCard */
+.dark .experience-grid .video .pixel-card {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.dark .experience-grid .video .pixel-card:hover {
+  border-color: rgba(59, 130, 246, 0.7);
+}
+
+.dark .experience-grid .video .pixel-card video {
+  opacity: 0.8 !important;
+}
+
+.dark .experience-grid .video .pixel-card:hover video {
+  opacity: 0.6 !important;
+}
+
+.dark .experience-grid .video .pixel-card .pixel-canvas {
+  opacity: 0.7;
+}
+
+.dark .experience-grid .video .pixel-card:hover .pixel-canvas {
+  opacity: 1;
+}
+
+/* Dark mode responsive para video */
+@media (max-width: 576px) {
+  .dark .experience-grid .video .pixel-card video {
+    opacity: 0.85 !important;
+  }
+  
+  .dark .experience-grid .video .pixel-card:hover video {
+    opacity: 0.6 !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .dark .experience-grid .video .pixel-card video {
+    opacity: 0.9 !important;
+  }
+  
+  .dark .experience-grid .video .pixel-card:hover video {
+    opacity: 0.7 !important;
+  }
+}
