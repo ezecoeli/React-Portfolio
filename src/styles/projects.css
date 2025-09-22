@@ -1,0 +1,157 @@
+/* Estilos específicos para la sección Projects */
+
+/* Efectos para títulos */
+.section-title {
+  position: relative;
+  background: linear-gradient(135deg, currentColor 0%, currentColor 60%, rgba(255,255,255,0.8) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s ease;
+  overflow: hidden;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  transition: transform 0.8s ease;
+  transform-origin: center;
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+.section-title:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.section-title:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+/* Efectos específicos para Testing */
+.testing-title {
+  letter-spacing: 0.5px;
+  text-shadow: 
+    0 4px 8px rgba(59, 130, 246, 0.3),
+    0 2px 4px rgba(59, 130, 246, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0 2px 6px rgba(59, 130, 246, 0.2));
+}
+
+.testing-title:hover {
+  text-shadow: 
+    0 6px 12px rgba(59, 130, 246, 0.4),
+    0 3px 6px rgba(59, 130, 246, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+}
+
+.testing-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.testing-title:hover::after {
+  opacity: 1;
+  animation: shimmer 1.5s ease-in-out;
+}
+
+/* Efectos específicos para Desarrollo Web */
+.dev-title {
+  letter-spacing: 0.5px;
+  text-shadow: 
+    0 4px 8px rgba(16, 185, 129, 0.3),
+    0 2px 4px rgba(16, 185, 129, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.2));
+}
+
+.dev-title:hover {
+  text-shadow: 
+    0 6px 12px rgba(16, 185, 129, 0.4),
+    0 3px 6px rgba(16, 185, 129, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.3));
+}
+
+.dev-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(16, 185, 129, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.dev-title:hover::after {
+  opacity: 1;
+  animation: shimmer 1.5s ease-in-out;
+}
+
+/* Responsive para títulos de sección */
+@media (max-width: 768px) {
+  .section-title {
+    letter-spacing: 0.25px;
+    text-shadow: 
+      0 3px 6px rgba(0, 0, 0, 0.25),
+      0 1px 3px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.1));
+  }
+  
+  .section-title::before {
+    width: 40px;
+    height: 1.5px;
+    bottom: -6px;
+  }
+  
+  .testing-title {
+    text-shadow: 
+      0 3px 6px rgba(59, 130, 246, 0.25),
+      0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dev-title {
+    text-shadow: 
+      0 3px 6px rgba(16, 185, 129, 0.25),
+      0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title::before {
+    width: 30px;
+    height: 1px;
+    bottom: -4px;
+  }
+  
+  .section-title {
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.2),
+      0 1px 2px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
+  }
+}

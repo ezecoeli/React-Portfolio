@@ -1,0 +1,225 @@
+/* Componentes reutilizables */
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.h2-animated {
+  position: relative;
+  display: inline-block;
+}
+
+.h2-animated::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: #434f98;
+  transform: translateX(-50%);
+  transition: width 0.6s ease;
+}
+
+.h2-animated:hover::after {
+  width: 100%;
+}
+
+/* h2 ajustes responsive */
+@media (max-width: 768px) {
+  .h2-animated::after {
+    height: 1px;
+    bottom: -3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .h2-animated::after {
+    height: 1px;
+    bottom: -2px;
+    transition: width 0.4s ease;
+  }
+}
+
+/* Botones */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  background-color: #434f98;
+  border-color: #7A85C1;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Enlaces */
+a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+span {
+  background-color: inherit;
+  font-weight: bold;
+}
+
+span:visited {
+  color: inherit;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #535458 0%, #000000 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  position: fixed;
+  height: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px); 
+  transition: all 0.3s ease;
+  border-bottom: 1px solid black;
+  border-top: 1px solid #2c2c2c;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 50px;
+  }
+}
+
+header .flex.items-center.space-x-4 button {
+  color: white !important;
+}
+
+header button {
+  color: white !important;
+}
+
+/* Navigation */
+nav a {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  margin: 0 1rem; 
+  display: inline-block; 
+  padding: 0.5rem 1rem;
+  color: white !important;
+  font-weight: bold;
+}
+
+nav a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  background-color: #434f98;
+  border-color: #7A85C1;
+}
+
+nav a:visited {
+  color: inherit;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #535458 0%, #000000 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  backdrop-filter: blur(10px); 
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #2c2c2c;
+  border-top: 1px solid #2c2c2c;
+  color: white !important;
+  margin-top: 0;
+}
+
+/* BackToTop Button */
+.topbtn {
+  position: fixed;
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  bottom: 5rem;
+  right: 2rem;
+  margin-top: -5rem;
+  padding: 0;
+  border: none;
+  color: white;
+  background-color: #747bff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Counter Band - Glassmorphism */
+.counter-band {
+  backdrop-filter: blur(20px);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(116, 123, 255, 0.1) 100%
+  );
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: #1f2937;
+}
+
+.dark .counter-band {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(116, 123, 255, 0.1) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.counter-band::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.counter-band:hover::before {
+  left: 100%;
+}

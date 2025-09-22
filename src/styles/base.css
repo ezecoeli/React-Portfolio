@@ -1,0 +1,93 @@
+/* Variables globales y estilos base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables globales */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  --text-light: #213547;
+  --text-dark: #ffffff;
+  --bg-light: #ffffff;
+  --bg-dark: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll suave para toda la página */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+
+/* Body base */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  padding-top: 70px; /* móvil */
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 60px; /* desktop */
+  }
+}
+
+/* Soporte preferencia de color */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-light: #213547;
+    --text-dark: #ffffff;
+    --bg-light: #ffffff;
+    --bg-dark: #242424;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}
+
+/* Tailwind dark mode base */
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark); 
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* Secciones base */
+section {
+  border-top: 1px solid #9d9ea1;
+}
+
+#profile {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Enlaces base */
+#contact a:visited {
+  color: inherit;
+}
+
+#projects a:visited {
+  color: inherit;
+}

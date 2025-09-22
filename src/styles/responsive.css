@@ -1,0 +1,164 @@
+/* Media queries y responsive design */
+
+/* Responsive para glitch-h2 */
+@media (max-width: 768px) {
+  .glitch-h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .glitch-h2 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Header responsive específico */
+@media (max-width: 768px) {
+  header {
+    height: 50px;
+  }
+  
+  body {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 45px;
+    padding: 0 1rem;
+  }
+  
+  body {
+    padding-top: 65px;
+  }
+}
+
+/* Profile responsive */
+@media (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-grid {
+    gap: 1rem;
+  }
+}
+
+/* Counter Band responsive */
+@media (max-width: 768px) {
+  .counter-band {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-band {
+    padding: 0.75rem;
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Buttons responsive */
+@media (max-width: 768px) {
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    padding: 0.4em 0.8em;
+    font-size: 0.85em;
+  }
+  
+  .topbtn {
+    width: 2rem;
+    height: 2rem;
+    bottom: 4rem;
+    right: 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* Dark mode adjustments responsive */
+@media (max-width: 768px) {
+  .dark .experience-grid > div {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (max-width: 480px) {
+  .dark .counter-band {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.04) 50%,
+      rgba(116, 123, 255, 0.08) 100%
+    );
+  }
+}
+
+/* Very small devices */
+@media (max-width: 320px) {
+  button {
+    padding: 0.3em 0.6em;
+    font-size: 0.8em;
+  }
+  
+  .counter-band {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .glitch-h2 {
+    font-size: 0.8rem;
+  }
+}
+
+/* Ultra wide screens */
+@media (min-width: 1920px) {
+  .experience-grid {
+    max-width: 1600px;
+  }
+}
+
+/* Navigation responsive */
+@media (max-width: 767px) {
+  .nav-desktop {
+    display: none;
+  }
+  
+  .hamburger {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Mobile menu responsive */
+@media (max-width: 480px) {
+  .mobile-menu {
+    margin-top: 0.5rem;
+    border-radius: 0.75rem;
+  }
+  
+  .mobile-menu a {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
