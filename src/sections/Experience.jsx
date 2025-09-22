@@ -51,6 +51,7 @@ export default function Experience() {
           <PixelCard 
             variant="default" 
             className="w-full h-full"
+            expandFromCursor={true} 
           >
             <div className="absolute inset-0 w-full h-full flex items-center justify-center">
               <video
@@ -75,6 +76,7 @@ export default function Experience() {
           <PixelCard 
             variant="default" 
             className="w-full h-full"
+            expandFromCursor={true} 
           >
             <div className="absolute inset-0 w-full h-full flex items-center justify-center">
               <img

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../styles/PixelCard.css';
 
 class Pixel {
@@ -74,6 +74,15 @@ class Pixel {
       this.size += this.speed;
     }
   }
+
+  // Método para recalcular delay desde nueva posición
+  updateDelay(originX, originY, reducedMotion) {
+    const dx = this.x - originX;
+    const dy = this.y - originY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    this.delay = reducedMotion ? 0 : distance;
+    this.counter = 0; // Reset counter para nueva animación
+  }
 }
 
 function getEffectiveSpeed(value, reducedMotion) {
@@ -122,13 +131,25 @@ const VARIANTS = {
   }
 };
 
-export default function PixelCard({ variant = 'default', gap, speed, colors, noFocus, className = '', children }) {
+export default function PixelCard({ 
+  variant = 'default', 
+  gap, 
+  speed, 
+  colors, 
+  noFocus, 
+  className = '', 
+  children,
+  expandFromCursor = true // Prop para habilitar expansión desde cursor
+}) {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
   const pixelsRef = useRef([]);
   const animationRef = useRef(null);
   const timePreviousRef = useRef(performance.now());
   const reducedMotion = useRef(window.matchMedia('(prefers-reduced-motion: reduce)').matches).current;
+  
+  // Estado para guardar posición del mouse
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const variantCfg = VARIANTS[variant] || VARIANTS.default;
   const finalGap = gap ?? variantCfg.gap;
@@ -136,7 +157,7 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
   const finalColors = colors ?? variantCfg.colors;
   const finalNoFocus = noFocus ?? variantCfg.noFocus;
 
-  const initPixels = () => {
+  const initPixels = (originX = null, originY = null) => {
     if (!containerRef.current || !canvasRef.current) return;
 
     const rect = containerRef.current.getBoundingClientRect();
@@ -151,12 +172,18 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
 
     const colorsArray = finalColors.split(',');
     const pxs = [];
+
+    // Usar originX/Y del cursor o centro como fallback
+    const centerX = originX !== null ? originX : width / 2;
+    const centerY = originY !== null ? originY : height / 2;
+
     for (let x = 0; x < width; x += parseInt(finalGap, 10)) {
       for (let y = 0; y < height; y += parseInt(finalGap, 10)) {
         const color = colorsArray[Math.floor(Math.random() * colorsArray.length)];
 
-        const dx = x - width / 2;
-        const dy = y - height / 2;
+        // Calcular distancia desde posición del cursor
+        const dx = x - centerX;
+        const dy = y - centerY;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const delay = reducedMotion ? 0 : distance;
 
@@ -198,12 +225,32 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
     animationRef.current = requestAnimationFrame(() => doAnimate(name));
   };
 
-  const onMouseEnter = () => handleAnimation('appear');
-  const onMouseLeave = () => handleAnimation('disappear');
-  const onFocus = e => {
-    if (e.currentTarget.contains(e.relatedTarget)) return;
+  // Capturar posición del mouse
+  const onMouseEnter = (e) => {
+    if (expandFromCursor && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      
+      setMousePosition({ x: mouseX, y: mouseY });
+      
+      // Reinicializar píxeles desde la posición del cursor
+      initPixels(mouseX, mouseY);
+    }
     handleAnimation('appear');
   };
+
+  const onMouseLeave = () => handleAnimation('disappear');
+  
+  const onFocus = e => {
+    if (e.currentTarget.contains(e.relatedTarget)) return;
+    // En focus usar el centro como fallback
+    if (expandFromCursor) {
+      initPixels();
+    }
+    handleAnimation('appear');
+  };
+  
   const onBlur = e => {
     if (e.currentTarget.contains(e.relatedTarget)) return;
     handleAnimation('disappear');
@@ -222,7 +269,7 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
       cancelAnimationFrame(animationRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [finalGap, finalSpeed, finalColors, finalNoFocus]);
+  }, [finalGap, finalSpeed, finalColors, finalNoFocus, expandFromCursor]);
 
   return (
     <div
