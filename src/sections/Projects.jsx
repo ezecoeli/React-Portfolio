@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import projectsPhoto from '../assets/projectsPhoto.jpg';
+import testingPhoto from '../assets/work.jpg';
 import mptImage from '../assets/MPT-SS.png';
 import deployChatDemo from '../assets/deploy-chat_demo.mp4';
 import deployChatImg from '../assets/deploy-chat.png';
@@ -72,7 +72,7 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
                   
                   <img
-                    src={projectsPhoto}
+                    src={testingPhoto}
                     alt="QA Testing"
                     className="rounded-lg shadow-lg w-full max-w-md h-[220px] object-cover mx-auto relative z-10 transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110 group-hover:shadow-2xl"
                   />
@@ -156,8 +156,8 @@ export default function Projects() {
                         <span className="text-xs text-gray-300">Trello</span>
                       </div>
                       <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <BiCodeBlock className="text-purple-500 text-sm" />
-                        <span className="text-xs text-gray-300">Zephyr</span>
+                        <SiConfluence className="text-purple-500 text-sm" />
+                        <span className="text-xs text-gray-300">Confluence</span>
                       </div>
                     </div>
                   </div>
@@ -175,8 +175,8 @@ export default function Projects() {
                         <span className="text-xs text-gray-300">ADB</span>
                       </div>
                       <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <BiCodeBlock className="text-orange-500 text-sm" />
-                        <span className="text-xs text-gray-300">BrowserStack</span>
+                        <SiSaucelabs className="text-orange-500 text-sm" />
+                        <span className="text-xs text-gray-300">SauceLabs</span>
                       </div>
                     </div>
                   </div>
@@ -233,10 +233,11 @@ export default function Projects() {
             pagination={{ clickable: true }}
             loop={false} 
             className="rounded-xl dev-carousel"
+            style={{ height: '730px' }} 
           >
             {/* Card Dev 1: ManagerPlaneTool */}
             <SwiperSlide>
-              <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center px-4 py-8 transition-all duration-300 ease-in-out group">
+              <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center px-4 py-8 min-h-[500px] transition-all duration-300 ease-in-out group">
                 {/* imagen clickeable */}
                 <a
                   href="https://ezecoeli.github.io/ManagerPlaneTool/"
@@ -267,7 +268,7 @@ export default function Projects() {
 
             {/* Card Dev 2: Deploy-Chat */}
             <SwiperSlide>
-              <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center px-4 py-8 transition-all duration-300 ease-in-out group">
+              <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center px-4 py-8 min-h-[500px] transition-all duration-300 ease-in-out group">
                 {/* video/imagen clickeable */}
                 <a
                   href="https://github.com/ezecoeli/Deploy-Chat"
@@ -275,30 +276,30 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="block group-link"
                 >
-                  <div className="relative w-full max-w-md h-[260px] rounded-lg mb-6 mx-auto overflow-hidden cursor-pointer">
-                    <video
-                      title={t('clickToSeeInGitHub')}
-                      className="w-full h-full object-contain transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-green-500/20"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      poster={deployChatImg}
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'block';
-                      }}
-                    >
-                      <source src={deployChatDemo} type="video/mp4" />
-                    </video>
-                    {/* Imagen de respaldo */}
-                    <img 
-                      src={deployChatImg} 
-                      alt="Deploy-Chat Preview" 
-                      className="w-full h-full object-contain transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-green-500/20"
-                      style={{ display: 'none' }}
-                    />
-                  </div>
+                  {/* video */}
+                  <video
+                    title={t('clickToSeeInGitHub')}
+                    className="w-full max-w-md object-cover rounded-lg mb-6 mx-auto transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-green-500/20 cursor-pointer"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster={deployChatImg}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'block';
+                    }}
+                  >
+                    <source src={deployChatDemo} type="video/mp4" />
+                  </video>
+                  
+                  {/* imagen fallback */}
+                  <img 
+                    src={deployChatImg} 
+                    alt="Deploy-Chat Preview" 
+                    className="w-full max-w-md object-cover rounded-lg mb-6 mx-auto transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-green-500/20 cursor-pointer"
+                    style={{ display: 'none' }}
+                  />
                 </a>
                 
                 <h3 className="text-2xl font-bold mb-4 text-white text-center">Deploy-Chat</h3>
