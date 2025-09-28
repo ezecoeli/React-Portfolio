@@ -25,5 +25,6 @@
   "apiTesting": "API and Performance",
   "projectManagement": "Project Management",
   "mobileDesktop": "Mobile and Cross-Platform",
-  "otherTools": "Other Tools"
+  "otherTools": "Other Tools",
+  "toolFrameDescription": "Tool Frame is a modern web application for managing and discovering general development tools. It allows users to add and remove tools, with real-time intelligent search, category filtering, and preview functionality. Built with React 18, Vite, and TailwindCSS, it features ES/EN internationalisation, a responsive design, data persistence using LocalStorage, and a modern UI with smooth animations."
 }

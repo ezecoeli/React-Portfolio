@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 
 import testingPhoto from '../assets/work.jpg';
 import mptImage from '../assets/MPT-SS.png';
+import toolFrameImage from '../assets/TF-SS.png';
 import deployChatDemo from '../assets/deploy-chat_demo.mp4';
 import deployChatImg from '../assets/deploy-chat.png';
 import { 
@@ -315,6 +316,37 @@ export default function Projects() {
                 {/* Contenedor de texto */}
                 <p className="text-xs sm:text-sm md:text-base text-gray-200 text-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto leading-relaxed px-2 sm:px-4">
                   {t('deployChatDescription')}
+                </p>
+              </div>
+            </SwiperSlide>
+
+            {/* Card Dev 3: ToolFrame */}
+            <SwiperSlide>
+              <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center px-4 py-8 min-h-[500px] transition-all duration-300 ease-in-out group">
+                {/* imagen clickeable */}
+                <a
+                  href="https://ezecoeli.github.io/ToolFrame/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group-link"
+                >
+                  <img
+                    title={t('clickToSeeInSite')}
+                    src={toolFrameImage}
+                    alt="ToolFrame"
+                    className="w-full max-w-md object-cover rounded-lg mb-6 mx-auto transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-blue-500/20 cursor-pointer"
+                  />
+                </a>
+
+                <h3 className="text-2xl font-bold mb-4 text-white text-center">Tool Frame</h3>
+                <div className="flex text-[20px] space-x-[12px] mb-4 justify-center">
+                  <SiReact className="text-cyan-600 dark:text-cyan-400 transition-transform duration-300 group-hover:scale-110" />
+                  <SiJavascript className="text-yellow-600 dark:text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
+                  <SiTailwindcss className="text-blue-600 dark:text-blue-400 transition-transform duration-300 group-hover:scale-110" />
+                  <SiKonva className="text-green-600 dark:text-green-400 transition-transform duration-300 group-hover:scale-110" />
+                </div>
+                <p className="text-xs sm:text-sm md:text-base text-gray-200 text-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto leading-relaxed px-2 sm:px-4">
+                  {t('toolFrameDescription')}
                 </p>
               </div>
             </SwiperSlide>
