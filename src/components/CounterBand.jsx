@@ -14,7 +14,7 @@ const CounterBand = ({ counters, className = "" }) => {
           startCounting();
         } else {
           setIsVisible(false);
-          setCounts(counters.map(() => 0)); // Reset counters
+          setCounts(counters.map(() => 0)); // Resetear contadores al salir de vista
         }
       },
       { threshold: 0.5 }

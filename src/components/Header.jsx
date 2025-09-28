@@ -85,7 +85,7 @@ const Header = () => {
       ref={headerRef}
       className="fixed top-0 left-0 right-0 flex justify-between items-center py-4 px-4 md:px-8 z-50"
     >
-      {/* NAV ESCRITORIO */}
+      {/* NAV Escritorio */}
       <nav className="nav-desktop items-center">
         <a href="#profile" onClick={handleLinkClick} className="mx-4 hover:text-gray-300 transition-colors">
           {t("profile")}
@@ -101,12 +101,12 @@ const Header = () => {
         </a>
       </nav>
 
-      {/* BOTÓN HAMBURGUESA */}
+      {/* BOTÓN Hamburguesa */}
       <button onClick={toggleMenu} className="ml-[10px] hamburger">
         {isMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
       </button>
 
-      {/* IDIOMA / TEMA */}
+      {/* Idioma / Tema */}
       <div className="flex items-center space-x-2 md:space-x-4">
         <button onClick={toggleLanguage} className="px-3 py-1 text-sm font-semibold border rounded">
           {i18n.language === "es" ? "EN" : "ES"}
@@ -116,7 +116,7 @@ const Header = () => {
         </button>
       </div>
 
-      {/* MENÚ MÓVIL */}
+      {/* MENÚ Móvil */}
       {isMenuOpen && (
         <div className="mobile-menu absolute top-full left-0 w-auto min-w-[160px] max-w-[200px] shadow-lg">
           <nav className="flex flex-col">

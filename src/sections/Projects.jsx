@@ -94,7 +94,7 @@ export default function Projects() {
               </div>
             </SwiperSlide>
 
-            {/* Card QA 2: Testing Tools & Technologies */}
+            {/* Card QA 2: Tecnologías */}
             <SwiperSlide>
               <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center p-4 min-h-[500px] group">
                 {/* Título */}
@@ -106,7 +106,7 @@ export default function Projects() {
                 </div>
                 
                 <div className="text-center w-full max-w-lg overflow-y-auto max-h-[360px] pb-4">
-                  {/* Automation Tools */}
+                  {/* Automation */}
                   <div className="mb-4">
                     <h4 className="text-base font-semibold text-cyan-500 mb-2 flex items-center justify-center gap-2">{t('automation')}:</h4>
                     <div className="flex flex-wrap justify-center gap-2 mb-2">

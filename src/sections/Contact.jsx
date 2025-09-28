@@ -7,11 +7,11 @@ export default function Contact() {
 
   return (
     <section id="contact" className="flex flex-col justify-center items-center bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-8">
-      <div className="mt-[80px] mb-[80px] max-w-6xl w-full flex-1 text-center"> {/* Cambié max-w-2xl por max-w-6xl */}
+      <div className="mt-[80px] mb-[80px] max-w-6xl w-full flex-1 text-center">
         <h2 className="text-[50px] mb-[50px] font-bold max-w-xl mx-auto h2-animated">{t('contact')}</h2>
         
         <div className="space-y-6">
-          {/* Contenedor optimizado para línea horizontal */}
+          
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 xl:gap-12 mb-[60px] mt-[40px] items-center justify-center">
             {/* Teléfono */}
             <a 
