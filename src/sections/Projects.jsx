@@ -233,8 +233,7 @@ export default function Projects() {
             navigation
             pagination={{ clickable: true }}
             loop={false} 
-            className="rounded-xl dev-carousel"
-            style={{ height: '730px' }} 
+            className="rounded-xl dev-carousel h-[730px]"
           >
             {/* Card Dev 1: ManagerPlaneTool */}
             <SwiperSlide>
