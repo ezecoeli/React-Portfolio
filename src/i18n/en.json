@@ -16,7 +16,7 @@
   "dark": "Dark",
   "allRightsReserved": "© 2025 All rights reserved",
   "viewProject": "View Project",
-  "webDev": "Web Development",
+  "webDev": "Software Development",
   "deployChatDescription": "Deploy-Chat is a project with retro vibes and a dev essence: a chat platform designed for work teams, featuring terminal-style themes, syntax highlighting, integrated AI, and E2E encryption. Built with React 19 + Vite, Supabase, and TailwindCSS, it offers real-time chat, OAuth authentication, ES/EN internationalisation, notes, search, and event scheduling. The development involved learning about row-level security, advanced state management with custom hooks, real-time communication optimisation, encryption, and a scalable architecture.",
   "clickToSeeInGitHub": "Click to see on GitHub",
   "clickToSeeInSite": "Click to access the site",

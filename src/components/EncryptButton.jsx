@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 import { FaGithub } from 'react-icons/fa';
 import { motion } from "framer-motion";
 
@@ -12,8 +13,14 @@ const EncryptButton = ({
   className = "",
   ...props 
 }) => {
+  const { i18n } = useTranslation();
   const intervalRef = useRef(null);
   const [displayText, setDisplayText] = useState(text);
+
+  // actualizar displayText cuando cambia el idioma
+  useEffect(() => {
+    setDisplayText(text);
+  }, [text, i18n.language]);
 
   const scramble = () => {
     let pos = 0;

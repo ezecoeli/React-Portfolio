@@ -27,8 +27,8 @@ export default function Projects() {
 
   // Configuración de contadores QA
   const qaCounters = [
-    { value: 239, label: t("testCycles"), suffix: "+" },
-    { value: 136, label: t("products"), suffix: "+" }
+    { value: 258, label: t("testCycles"), suffix: "+" },
+    { value: 141, label: t("products"), suffix: "+" }
   ];
 
   return (
