@@ -126,6 +126,7 @@
 @media (min-width: 1920px) {
   .experience-grid {
     max-width: 1600px;
+    margin: 0 auto;
   }
 }
 
@@ -160,5 +161,40 @@
   .mobile-menu a {
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
+  }
+}
+
+/* Profile text container responsive */
+.text-container {
+  width: 100%;
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .text-container {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-container {
+    max-width: 70ch;
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .text-container {
+    max-width: 75ch;
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .text-container {
+    max-width: 80ch;
+    padding: 3.5rem;
   }
 }

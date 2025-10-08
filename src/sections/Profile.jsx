@@ -63,7 +63,7 @@ export default function Profile() {
 
         {/* 3. Texto profile description */}
         <motion.div 
-          className="flex flex-col items-center justify-center p-[40px] lg:px-[120px] xl:px-[160px] mt-[40px] max-w-4xl mx-auto"
+          className="text-container mt-[40px]"
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
