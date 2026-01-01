@@ -14,7 +14,7 @@
   "contact": "Contacto",
   "light": "Claro",
   "dark": "Oscuro",
-  "allRightsReserved": "© 2025 Todos los derechos reservados",
+  "allRightsReserved": "Todos los derechos reservados",
   "viewProject": "Ver Proyecto",
   "webDev": "Desarrollo de Software",
   "deployChatDescription": "Deploy-Chat es un proyecto con vibes retro y esencia dev: una plataforma de chat enfocada en equipos de trabajo, con temas estilo terminal, syntax highlighting, IA integrada y encriptación E2E. Construido con React 19 + Vite, Supabase y TailwindCSS, ofrece chat en tiempo real, autenticación OAuth, internacionalización ES/EN, notas, búsqueda y agenda de eventos. El desarrollo implicó aprender sobre seguridad a nivel de filas, gestión de estado con hooks, optimización de comunicación en tiempo real, encriptación y arquitectura escalable.",
