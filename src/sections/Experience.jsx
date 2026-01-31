@@ -36,7 +36,7 @@ export default function Experience() {
               )
             }}
           >
-            {t('experienceDescription1')}
+            {t('experienceDescription2')}
           </ReactMarkdown>
         </motion.div>
 
@@ -103,7 +103,7 @@ export default function Experience() {
               )
             }}
           >
-            {t('experienceDescription2')}
+            {t('experienceDescription1')}
           </ReactMarkdown>
         </motion.div>
       </div>
