@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { FaReact, FaNodeJs, FaPython } from "react-icons/fa";
-import { SiPostgresql, SiJavascript, SiDocker, SiPostman, SiTrello } from "react-icons/si";
+import { SiPostgresql, SiJavascript, SiDocker, SiPostman, SiJira } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import ReactMarkdown from 'react-markdown';
@@ -31,7 +31,7 @@ export default function Profile() {
     { component: SiPostgresql, title: "PostgreSQL" },
     { component: SiDocker, title: "Docker" },
     { component: SiPostman, title: "Postman" },
-    { component: SiTrello, title: "Trello" },
+    { component: SiJira, title: "Jira" },
   ];
 
   return (
@@ -70,7 +70,7 @@ export default function Profile() {
         >
           <ReactMarkdown
             components={{
-              p: ({node, ...props}) => (
+              p: ({...props}) => (
                 <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto mb-4" {...props} />
               )
             }}

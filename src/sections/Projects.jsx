@@ -14,6 +14,7 @@ import {
   SiTailwindcss, SiJavascript, SiKonva, SiReact, SiSupabase,
   SiSelenium, SiCypress, SiCucumber, SiPostman, SiConfluence, 
   SiJira, SiTrello, SiGit, SiSlack, SiFigma, SiApachejmeter, SiSaucelabs,
+  SiAwsorganizations, SiGithub, SiMysql
 } from "react-icons/si";
 import { FaAndroid, FaApple, FaJava } from "react-icons/fa";
 import { BiCodeBlock } from "react-icons/bi";
@@ -21,6 +22,7 @@ import { motion } from 'framer-motion';
 import CounterBand from '../components/CounterBand.jsx';
 import StarBorder from '../components/StarBorder.jsx';
 import EncryptButton from '../components/EncryptButton.jsx';
+import playwrightSvg from '../assets/playwright.svg';
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -34,13 +36,13 @@ export default function Projects() {
   return (
     <section id="projects" className="mb-[100px] flex flex-col justify-center items-center bg-white dark:bg-black text-gray-900 dark:text-gray-100 p-8">
       {/* Título principal */}
-      <h2 className="text-[50px] font-bold mt-[80px] mb-[60px] max-w-xl mx-auto h2-animated">{t('projects')}</h2>
+      <h2 className="text-[50px] font-bold mt-[80px] mb-[40px] max-w-xl mx-auto h2-animated">{t('projects')}</h2>
       
       {/* SECCIÓN QA TESTING */}
-      <div className="w-full max-w-4xl mx-auto mb-16">
+      <div className="w-full max-w-4xl mx-auto mb-12">
         {/* Título QA */}
         <motion.h3 
-          className="text-3xl font-bold text-center mb-8 text-blue-600 dark:text-blue-400 section-title testing-title"
+          className="text-3xl font-bold text-center mb-6 text-blue-600 dark:text-blue-400 section-title testing-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -96,111 +98,149 @@ export default function Projects() {
 
             {/* Card QA 2: Tecnologías */}
             <SwiperSlide>
-              <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center justify-center p-4 min-h-[500px] group">
+              <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden flex flex-col items-center pt-2 px-4 pb-4 min-h-[500px] group">
                 {/* Título */}
-                <div className="w-full text-center mb-6 pb-8 border-b border-gray-700/50">
-                  <h3 className="text-2xl font-bold text-white relative inline-block">
+                <div className="w-full text-center pb-4">
+                  <h3 className="text-xl font-bold text-white relative inline-block">
                     {t('tecnologies')}
                     <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                   </h3>
                 </div>
                 
-                <div className="text-center w-full max-w-lg overflow-y-auto max-h-[360px] pb-4">
+                <div className="text-center w-full max-w-lg overflow-y-auto max-h-[420px] pb-6 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
                   {/* Automation */}
-                  <div className="mb-4">
-                    <h4 className="text-base font-semibold text-cyan-500 mb-2 flex items-center justify-center gap-2">{t('automation')}:</h4>
-                    <div className="flex flex-wrap justify-center gap-2 mb-2">
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiSelenium className="text-green-500 text-sm" />
+                  <div className="mb-3">
+                    <h4 className="text-sm font-semibold text-cyan-500 mb-1.5 flex items-center justify-center gap-2">{t('automation')}:</h4>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiSelenium className="text-green-500 text-xs" />
                         <span className="text-xs text-gray-300">Selenium</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiCypress className="text-green-400 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiCypress className="text-green-400 text-xs" />
                         <span className="text-xs text-gray-300">Cypress</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <FaJava className="text-orange-500 text-sm" />
-                        <span className="text-xs text-gray-300">Java</span>
-                      </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiCucumber className="text-green-600 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiCucumber className="text-green-600 text-xs" />
                         <span className="text-xs text-gray-300">Cucumber</span>
+                      </div>
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <img 
+                          src={playwrightSvg} 
+                          alt="Playwright" 
+                          className="w-3 h-3"
+                          style={{ 
+                            width: '12px', 
+                            height: '12px',
+                            minWidth: '12px',
+                            minHeight: '12px',
+                            maxWidth: '12px',
+                            maxHeight: '12px'
+                          }}
+                        />
+                        <span className="text-xs text-gray-300">Playwright</span>
                       </div>
                     </div>
                   </div>
 
                   {/* API & Performance */}
-                  <div className="mb-4">
-                    <h4 className="text-base font-semibold text-purple-400 mb-2">{t('apiTesting')}:</h4>
-                    <div className="flex flex-wrap justify-center gap-2 mb-2">
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiPostman className="text-orange-400 text-sm" />
+                  <div className="mb-3">
+                    <h4 className="text-sm font-semibold text-purple-400 mb-1.5">{t('apiTesting')}:</h4>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiPostman className="text-orange-400 text-xs" />
                         <span className="text-xs text-gray-300">Postman</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiApachejmeter className="text-red-500 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiApachejmeter className="text-red-500 text-xs" />
                         <span className="text-xs text-gray-300">JMeter</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Project Management */}
-                  <div className="mb-4">
-                    <h4 className="text-base font-semibold text-yellow-400 mb-2">{t('projectManagement')}:</h4>
-                    <div className="flex flex-wrap justify-center gap-2 mb-2">
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiJira className="text-blue-500 text-sm" />
+                  <div className="mb-3">
+                    <h4 className="text-sm font-semibold text-yellow-400 mb-1.5">{t('projectManagement')}:</h4>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiJira className="text-blue-500 text-xs" />
                         <span className="text-xs text-gray-300">Jira</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiTrello className="text-blue-400 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiTrello className="text-blue-400 text-xs" />
                         <span className="text-xs text-gray-300">Trello</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiConfluence className="text-purple-500 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiConfluence className="text-purple-500 text-xs" />
                         <span className="text-xs text-gray-300">Confluence</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Mobile & Cross-Platform */}
-                  <div className="mb-4">
-                    <h4 className="text-base font-semibold text-red-400 mb-2">{t('mobileDesktop')}:</h4>
-                    <div className="flex flex-wrap justify-center gap-2">
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <FaApple className="text-gray-300 text-sm" />
+                  <div className="mb-3">
+                    <h4 className="text-sm font-semibold text-red-400 mb-1.5">{t('mobileDesktop')}:</h4>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <FaApple className="text-gray-300 text-xs" />
                         <span className="text-xs text-gray-300">TestFlight</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <FaAndroid className="text-green-500 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <FaAndroid className="text-green-500 text-xs" />
                         <span className="text-xs text-gray-300">ADB</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiSaucelabs className="text-orange-500 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiSaucelabs className="text-orange-500 text-xs" />
                         <span className="text-xs text-gray-300">SauceLabs</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Collaboration Tools */}
-                  <div>
-                    <h4 className="text-base font-semibold text-pink-400 mb-2">{t('otherTools')}:</h4>
-                    <div className="flex flex-wrap justify-center gap-2">
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiGit className="text-orange-500 text-sm" />
+                  <div className="mb-3">
+                    <h4 className="text-sm font-semibold text-pink-400 mb-1.5">{t('otherTools')}:</h4>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiGit className="text-orange-500 text-xs" />
                         <span className="text-xs text-gray-300">Git</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiSlack className="text-purple-500 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiSlack className="text-purple-500 text-xs" />
                         <span className="text-xs text-gray-300">Slack</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <SiFigma className="text-pink-500 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiFigma className="text-pink-500 text-xs" />
                         <span className="text-xs text-gray-300">Figma</span>
                       </div>
-                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-1 rounded-md tool-item">
-                        <BiCodeBlock className="text-blue-400 text-sm" />
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <BiCodeBlock className="text-blue-400 text-xs" />
                         <span className="text-xs text-gray-300">DevTools</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CI/CD & DevOps */}
+                  <div className="mb-3">
+                    <h4 className="text-sm font-semibold text-indigo-400 mb-1.5">CI/CD & DevOps:</h4>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiAwsorganizations className="text-orange-500 text-xs" />
+                        <span className="text-xs text-gray-300">AWS CodePipeline</span>
+                      </div>
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiGithub className="text-gray-300 text-xs" />
+                        <span className="text-xs text-gray-300">GitHub</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Databases */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-blue-300 mb-1.5">Databases:</h4>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      <div className="flex items-center gap-1 bg-gray-800 px-2 py-0.5 rounded-md tool-item">
+                        <SiMysql className="text-blue-600 text-xs" />
+                        <span className="text-xs text-gray-300">MySQL/HeidiSQL</span>
                       </div>
                     </div>
                   </div>
@@ -212,10 +252,10 @@ export default function Projects() {
       </div>
 
       {/* SECCIÓN DESARROLLO */}
-      <div className="w-full max-w-4xl mx-auto mb-16">
+      <div className="w-full max-w-4xl mx-auto mb-12">
         {/* Título Desarrollo */}
         <motion.h3 
-          className="text-3xl font-bold text-center mb-8 text-green-600 dark:text-green-400 section-title dev-title"
+          className="text-3xl font-bold text-center mb-6 text-green-600 dark:text-green-400 section-title dev-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -308,7 +348,7 @@ export default function Projects() {
                 <div className="flex text-[20px] space-x-[12px] mb-4 justify-center">
                   <SiReact className="text-cyan-600 dark:text-cyan-400 transition-transform duration-300 group-hover:scale-110" />
                   <SiJavascript className="text-yellow-600 dark:text-yellow-400 transition-transform duration-300 group-hover:scale-110" />
-                  <SiTailwindcss className="text-blue-600 dark:text-blue-400 transition-transform duration-300 group-hover:scale-110" />
+                  <SiTailwindcss className="text-blue-600 dark:text-blue-400 transition-transform duration-300 group_hover:scale-110" />
                   <SiSupabase className="text-green-600 dark:text-green-400 transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 
@@ -349,15 +389,12 @@ export default function Projects() {
                 </p>
               </div>
             </SwiperSlide>
-
-            {/* añadir mas proyectos*/}
-          
           </Swiper>
         </div>
       </div>
 
       {/* Enlace a GitHub */}
-      <div className="mt-8 sm:mt-12 lg:mt-[50px] px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <div className="mt-8 px-4 sm:px-6 lg:px-8 text-center space-y-6">
         <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
           <StarBorder 
             className="inline-block w-full" 
