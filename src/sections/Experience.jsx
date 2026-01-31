@@ -32,7 +32,7 @@ export default function Experience() {
           <ReactMarkdown
             components={{
               p: ({node, ...props}) => (
-                <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto mb-4" {...props} />
+                <p className="text-lg leading-loose whitespace-pre-line text-justify hyphens-auto mb-4" {...props} />
               )
             }}
           >
@@ -99,7 +99,7 @@ export default function Experience() {
           <ReactMarkdown
             components={{
               p: ({node, ...props}) => (
-                <p className="text-lg leading-relaxed whitespace-pre-line text-justify hyphens-auto mb-4 pr-[10px]" {...props} />
+                <p className="text-lg leading-loose whitespace-pre-line text-justify hyphens-auto mb-4 pr-[10px]" {...props} />
               )
             }}
           >
